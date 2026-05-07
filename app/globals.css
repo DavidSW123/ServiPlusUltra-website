@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Bold & Friendly palette */
+    --color-cream: 255 248 238;
+    --color-brand: 45 82 245;
+    --color-sun: 255 212 59;
+    --color-coral: 255 107 71;
+    --color-mint: 212 245 225;
+    --color-ink: 26 26 26;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  html,
+  body {
+    @apply bg-cream-100 text-ink-900 antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply font-sans;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  ::selection {
+    @apply bg-brand-600 text-white;
+  }
+
+  /* Tipografía display por defecto en headings */
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight text-ink-900;
+  }
+
+  /* Focus accesible y visible */
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-600 ring-offset-2 ring-offset-cream-100;
+  }
+}
+
+@layer components {
+  .container-narrow {
+    @apply mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-wide {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Subrayado handwritten Caveat */
+  .underline-hand {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'><path d='M2 7 Q 50 1, 100 6 T 198 5' stroke='%23FFD43B' stroke-width='5' fill='none' stroke-linecap='round'/></svg>");
+    background-repeat: no-repeat;
+    background-position: 0 92%;
+    background-size: 100% 0.4em;
+    padding-bottom: 0.1em;
+  }
+
+  .underline-hand-coral {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'><path d='M2 7 Q 50 1, 100 6 T 198 5' stroke='%23FF6B47' stroke-width='5' fill='none' stroke-linecap='round'/></svg>");
+    background-repeat: no-repeat;
+    background-position: 0 92%;
+    background-size: 100% 0.4em;
+    padding-bottom: 0.1em;
+  }
+
+  /* Sticker rotado (badge) */
+  .sticker {
+    @apply inline-flex items-center gap-1.5 rounded-full border-2 border-ink-900 px-3 py-1 text-xs font-bold uppercase tracking-wide shadow-sticker;
+  }
+
+  /* Pill — sin sombra dura */
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold;
+  }
+
+  /* Card brutalist border + sticker shadow */
+  .card-pop {
+    @apply rounded-3xl border-2 border-ink-900 shadow-sticker transition hover:-translate-y-1 hover:shadow-[8px_8px_0_0_rgba(26,26,26,1)];
+  }
+
+  /* Inputs del formulario */
+  .form-input {
+    @apply w-full rounded-2xl border-2 border-ink-900 bg-white px-4 py-3 text-sm text-ink-900 placeholder:text-ink-500 transition focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-600/30;
+  }
+
+  .form-input:invalid:not(:focus):not(:placeholder-shown) {
+    @apply border-coral-500;
+  }
+
+  /* Botón shine compat */
+  .btn-shine {
+    background-image: linear-gradient(
+      110deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.18) 50%,
+      transparent 70%
+    );
+    background-size: 200% 100%;
+    background-repeat: no-repeat;
+    background-position: -100% 0;
+    transition: background-position 0.6s ease;
+  }
+
+  .btn-shine:hover {
+    background-position: 100% 0;
+  }
+}
+
+@layer utilities {
+  .mask-fade-bottom {
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Rotaciones tipo sticker */
+  .rotate-sticker-1 {
+    transform: rotate(-3deg);
+  }
+  .rotate-sticker-2 {
+    transform: rotate(2deg);
+  }
+  .rotate-sticker-3 {
+    transform: rotate(-5deg);
+  }
+}
