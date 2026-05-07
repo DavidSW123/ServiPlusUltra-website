@@ -50,7 +50,7 @@ const services: ServiceCard[] = [
     ],
     icon: Snowflake,
     variant: "cream",
-    badge: "★ GARANTÍA 3 AÑOS",
+    badge: "★ GARANTÍA 12 MESES*",
   },
   {
     slug: "/reparaciones-manitas",

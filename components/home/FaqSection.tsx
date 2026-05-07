@@ -26,7 +26,7 @@ const defaultItems: FaqItem[] = [
   },
   {
     q: "¿Hacéis garantía?",
-    a: "Claro. 3 años en mano de obra. Si algo no funciona o se cae, avisáis y volvemos. Pero es que lo que entregamos funciona.",
+    a: "Claro. 12 meses en mano de obra (sujeto a condiciones: cubre defectos imputables a la mano de obra; no cubre mal uso, modificaciones por terceros ni desgaste normal). Si algo no va, avisáis y volvemos. Pero es que lo que entregamos funciona.",
   },
 ];
 

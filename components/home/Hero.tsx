@@ -80,7 +80,7 @@ export function Hero() {
             {/* Sticker flotante 1 */}
             <div className="absolute -top-6 -left-4 z-20 hidden rotate-sticker-3 sm:block">
               <div className="rounded-full border-2 border-ink-900 bg-sun-400 px-4 py-2 text-xs font-bold uppercase shadow-sticker">
-                Garantía 3 años ✦
+                Garantía 12 meses* ✦
               </div>
             </div>
 

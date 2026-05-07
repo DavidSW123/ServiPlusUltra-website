@@ -86,16 +86,21 @@ export function Differentiators() {
                 Si falla, <span className="text-sun-400">volvemos.</span>
               </h3>
               <p className="mt-3 text-base text-cream-100/90">
-                Garantía de <strong className="text-sun-400">3 años</strong> en todo lo que hacemos. No es
-                marketing — es que sabemos que lo que entregamos va a funcionar. Si pasa algo, una llamada y
-                estamos.
+                Garantía de <strong className="text-sun-400">12 meses*</strong> en mano de obra. No es
+                marketing — es que sabemos que lo que entregamos va a funcionar. Si pasa algo, una llamada
+                y estamos.
+              </p>
+              <p className="mt-4 text-xs text-cream-100/60">
+                * Sujeto a condiciones. La garantía cubre defectos imputables a la mano de obra y no
+                cubre daños por mal uso, modificaciones por terceros o desgaste normal. Detalles en el
+                presupuesto.
               </p>
             </div>
             <div className="flex justify-end lg:col-span-5">
               <div className="rotate-sticker-2 rounded-3xl border-2 border-sun-400 bg-sun-400 p-6 text-center shadow-[6px_6px_0_0_rgba(255,255,255,0.15)]">
-                <span className="block font-display text-7xl font-bold leading-none text-ink-900">3</span>
+                <span className="block font-display text-7xl font-bold leading-none text-ink-900">12</span>
                 <span className="mt-1 block text-xs font-bold uppercase tracking-wider text-ink-900">
-                  Años de garantía
+                  Meses de garantía*
                 </span>
               </div>
             </div>
