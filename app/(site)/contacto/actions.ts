@@ -42,7 +42,13 @@ export async function submitContactForm(
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const inbox = process.env.CONTACT_INBOX_EMAIL ?? siteConfig.contact.email;
+  const inboxEnv = process.env.CONTACT_INBOX_EMAIL ?? siteConfig.contact.email;
+  // Permite múltiples destinatarios separados por coma:
+  //   CONTACT_INBOX_EMAIL=correo1@x.com,correo2@y.com
+  const inbox = inboxEnv
+    .split(",")
+    .map((s) => s.trim())
+    .filter(Boolean);
   const from = process.env.CONTACT_FROM_EMAIL ?? "ServiPlusUltra <onboarding@resend.dev>";
 
   if (!apiKey) {
