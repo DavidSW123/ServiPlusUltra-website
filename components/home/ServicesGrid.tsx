@@ -139,7 +139,7 @@ export function ServicesGrid() {
             <Link
               key={service.slug}
               href={service.slug}
-              className={`group relative flex flex-col overflow-hidden rounded-3xl border-2 border-ink-900 p-7 shadow-sticker transition hover:-translate-y-1 hover:shadow-[8px_8px_0_0_rgba(26,26,26,1)] ${v.bg}`}
+              className={`group relative flex flex-col rounded-3xl border-2 border-ink-900 p-7 shadow-sticker transition hover:-translate-y-1 hover:shadow-[8px_8px_0_0_rgba(26,26,26,1)] ${v.bg}`}
             >
               {/* Sticker badge rotado */}
               <div

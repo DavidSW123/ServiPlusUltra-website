@@ -13,9 +13,9 @@ export function CtaBanner({
   subtitle = "Mándanos fotos, cuéntanos qué necesitas. Te damos presupuesto en 24 horas, sin bobadas. Si es algo que sabemos hacer, te decimos sí. Si no, te lo decimos antes de que pierdas tiempo.",
 }: Props) {
   return (
-    <section className="relative overflow-hidden bg-cream-100">
+    <section className="relative bg-cream-100">
       <Container className="py-14 sm:py-20">
-        <div className="relative isolate overflow-hidden rounded-[36px] border-2 border-ink-900 bg-sun-400 p-8 shadow-sticker sm:p-12 lg:p-14">
+        <div className="relative isolate rounded-[36px] border-2 border-ink-900 bg-sun-400 p-8 shadow-sticker sm:p-12 lg:p-14">
           {/* Sticker rotado */}
           <div className="absolute -top-4 left-12 rotate-sticker-1 rounded-full border-2 border-ink-900 bg-coral-500 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-sticker">
             <Star className="mr-1 inline h-3 w-3 fill-current" />
