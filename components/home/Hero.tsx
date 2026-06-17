@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { siteConfig } from "@/lib/site-config";
 
 const marqueeItems = [
-  "URGENCIAS 24H",
+  "URGENCIAS PRIORITARIAS",
   "REFORMAS DE VIVIENDAS",
   "MANTENIMIENTO DE NAVES",
   "ELECTRICIDAD",
@@ -36,7 +36,7 @@ export function Hero() {
             {/* Sticker rotado superior */}
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border-2 border-ink-900 bg-coral-500 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-sticker rotate-sticker-1">
               <Star className="h-3.5 w-3.5 fill-current" />
-              4,9 EN 327 RESEÑAS · MADRID + BARCELONA
+              Técnicos de oficio · Madrid + Barcelona
             </div>
 
             <h1 className="font-display text-display-xl text-ink-900">
@@ -69,9 +69,9 @@ export function Hero() {
 
             {/* Pills de datos */}
             <div className="mt-10 flex flex-wrap gap-3">
-              <DataPill bg="bg-brand-600" text="text-white" value="1.247" label="Obras realizadas" />
-              <DataPill bg="bg-sun-400" text="text-ink-900" value="<4h" label="Respuesta urgencias" />
-              <DataPill bg="bg-mint-100" text="text-ink-900" value="15 años" label="De oficio" />
+              <DataPill bg="bg-brand-600" text="text-white" value="12 meses*" label="de garantía" />
+              <DataPill bg="bg-sun-400" text="text-ink-900" value="<4h" label="urgencias en Barcelona" />
+              <DataPill bg="bg-mint-100" text="text-ink-900" value="Gratis" label="presupuesto sin compromiso" />
             </div>
           </div>
 

@@ -86,7 +86,7 @@ export default function MadridPage() {
         title={
           <>
             Servicio técnico a domicilio en{" "}
-            <span className="text-ultra-gradient">Madrid</span> y área metropolitana
+            <span className="relative inline-block"><span className="relative z-10">Madrid</span><span className="absolute inset-x-0 bottom-1 -z-0 h-3 bg-sun-400" aria-hidden /></span> y área metropolitana
           </>
         }
         description="Electricidad, climatización y reparaciones del hogar para Madrid ciudad y los principales municipios. Hogares, comunidades, comercios y oficinas — con la misma transparencia y cuidado en cada visita."
@@ -100,7 +100,7 @@ export default function MadridPage() {
         title={
           <>
             Tres especialidades, un solo equipo de{" "}
-            <span className="text-ultra-gradient">confianza</span> en Madrid
+            <span className="relative inline-block"><span className="relative z-10">confianza</span><span className="absolute inset-x-0 bottom-1 -z-0 h-3 bg-sun-400" aria-hidden /></span> en Madrid
           </>
         }
         subtitle="Trabajamos con la misma calidad en todos los distritos de Madrid y municipios del área metropolitana. Te vemos, te escuchamos y te damos solución."

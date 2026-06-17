@@ -26,14 +26,14 @@ const services: ServiceCard[] = [
     description:
       "Urgencias eléctricas, reformas completas, cambios de cuadro por normativa y mantenimiento preventivo en comercios.",
     bullets: [
-      "Urgencias 24h sin esperas",
+      "Urgencias eléctricas sin esperas",
       "Reforma completa de instalación",
       "Cambio de cuadro antiguo",
       "Mantenimiento empresas",
     ],
     icon: Zap,
     variant: "cobalt",
-    badge: "URGENCIAS 24H",
+    badge: "ATENCIÓN URGENTE",
   },
   {
     slug: "/climatizacion",

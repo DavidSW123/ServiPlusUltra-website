@@ -95,7 +95,7 @@ export default function ManitasPage() {
         eyebrow="Servicio · Manitas"
         title={
           <>
-            Eso que <span className="text-ultra-gradient">nunca llega a hacerse</span>, lo dejamos hecho hoy
+            Eso que <span className="text-sun-400">nunca llega a hacerse</span>, lo dejamos hecho hoy
           </>
         }
         description="Pequeñas reparaciones del hogar, montaje de muebles, fijaciones, remates de obra menor y todos esos arreglos que se acumulan. Una sola visita, una lista terminada y sin chapuzas."

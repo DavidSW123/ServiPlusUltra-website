@@ -97,7 +97,7 @@ export default function ElectricidadPage() {
         title={
           <>
             Electricistas a domicilio que dan la cara en{" "}
-            <span className="text-ultra-gradient">Madrid y Barcelona</span>
+            <span className="text-sun-400">Madrid y Barcelona</span>
           </>
         }
         description="Averías, cuadros, mecanismos, iluminación y mejoras de seguridad. Vamos a tu casa, comunidad o negocio, revisamos la instalación y te proponemos la solución más segura y razonable — sin sustos en la factura."
@@ -115,7 +115,7 @@ export default function ElectricidadPage() {
         eyebrow="Qué hacemos"
         title={
           <>
-            Trabajos eléctricos completos, <span className="text-ultra-gradient">sin chapuzas</span>
+            Trabajos eléctricos completos, <span className="relative inline-block"><span className="relative z-10">sin chapuzas</span><span className="absolute inset-x-0 bottom-1 -z-0 h-3 bg-sun-400" aria-hidden /></span>
           </>
         }
         subtitle="Desde la avería puntual hasta la instalación completa de un local. Si algo no lo hacemos nosotros, te lo decimos antes de intentarlo."

@@ -96,7 +96,7 @@ export default function ClimatizacionPage() {
         eyebrow="Servicio · Climatización"
         title={
           <>
-            Frío en agosto, calor en enero. <span className="text-ultra-gradient">Sin sufrir.</span>
+            Frío en agosto, calor en enero. <span className="text-sun-400">Sin sufrir.</span>
           </>
         }
         description="Instalación, mantenimiento y reparación de aire acondicionado, bombas de calor y ventilación en Madrid y Barcelona. Te recomendamos lo que de verdad necesitas, no lo más caro del catálogo."

@@ -91,7 +91,7 @@ export default function BarcelonaPage() {
         title={
           <>
             Servicio técnico a domicilio en{" "}
-            <span className="text-ultra-gradient">Barcelona</span> y área metropolitana
+            <span className="relative inline-block"><span className="relative z-10">Barcelona</span><span className="absolute inset-x-0 bottom-1 -z-0 h-3 bg-sun-400" aria-hidden /></span> y área metropolitana
           </>
         }
         description="Electricidad, climatización y reparaciones del hogar para Barcelona ciudad y municipios cercanos. Damos prioridad a las urgencias y trabajamos con la misma transparencia para particulares, comunidades y negocios."
@@ -104,7 +104,7 @@ export default function BarcelonaPage() {
         eyebrow="Servicios en Barcelona"
         title={
           <>
-            Lo que <span className="text-ultra-gradient">de verdad necesitas</span> en Barcelona
+            Lo que <span className="relative inline-block"><span className="relative z-10">de verdad necesitas</span><span className="absolute inset-x-0 bottom-1 -z-0 h-3 bg-sun-400" aria-hidden /></span> en Barcelona
           </>
         }
         subtitle="Trabajamos con la misma calidad y rapidez en todos los distritos de Barcelona y municipios del área metropolitana."

@@ -29,7 +29,7 @@ export function Differentiators() {
         {/* Item 1 GRANDE — Plazos */}
         <div className="relative rounded-3xl border-2 border-ink-900 bg-cream-50 p-7 shadow-sticker lg:col-span-7 lg:row-span-2 lg:p-9">
           <div className="absolute -top-4 right-8 rotate-sticker-2 rounded-full border-2 border-ink-900 bg-coral-500 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white shadow-sticker">
-            Datos 2024
+            Plazos en firme
           </div>
           <div className="flex h-14 w-14 items-center justify-center rounded-2xl border-2 border-ink-900 bg-coral-500 text-white">
             <Calendar className="h-7 w-7" strokeWidth={2.2} />
@@ -40,11 +40,13 @@ export function Differentiators() {
             que estén sin agua 6 meses porque algo se paró.
           </p>
 
-          <div className="mt-6 flex items-end gap-3 rounded-2xl border-2 border-ink-900 bg-sun-400 p-5">
-            <span className="font-display text-6xl font-bold leading-none text-ink-900">96%</span>
-            <span className="pb-1 text-sm font-bold uppercase leading-tight text-ink-900">
-              Obras entregadas a tiempo
-            </span>
+          <div className="mt-6 rounded-2xl border-2 border-ink-900 bg-sun-400 p-5">
+            <p className="font-display text-lg font-bold leading-snug text-ink-900">
+              El plazo acordado va por escrito en el presupuesto.
+            </p>
+            <p className="mt-1 text-sm font-semibold text-ink-900/80">
+              Y si surge un imprevisto, te avisamos antes de seguir — no después.
+            </p>
           </div>
         </div>
 
@@ -63,7 +65,7 @@ export function Differentiators() {
         {/* Item 3 — Técnicos que saben */}
         <div className="relative rounded-3xl border-2 border-ink-900 bg-mint-100 p-7 shadow-sticker lg:col-span-5">
           <div className="absolute -top-3 right-6 rotate-sticker-1 rounded-full border-2 border-ink-900 bg-ink-900 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-sun-400 shadow-sticker">
-            ★ 15 años promedio
+            ★ Con oficio
           </div>
           <div className="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-ink-900 bg-coral-500 text-white">
             <Wrench className="h-6 w-6" strokeWidth={2.2} />
