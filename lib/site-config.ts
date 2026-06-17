@@ -12,16 +12,16 @@ export const siteConfig = {
   tagline: "Multiservicios premium en Madrid y Barcelona",
   description:
     "Electricidad, climatización y reparaciones del hogar a domicilio en Madrid y Barcelona. Técnicos cualificados, transparencia y soluciones que duran.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://serviplusultra.es",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.serviplusultrasolutionssl.com",
 
   contact: {
-    phone: "+34 655 099 298",
-    phoneRaw: "+34655099298",
-    phoneTel: "tel:+34655099298",
-    whatsapp: "https://wa.me/34655099298",
-    whatsappRaw: "34655099298",
-    email: "serviplusultrasolutionssl@gmail.com",
-    emailLink: "mailto:serviplusultrasolutionssl@gmail.com",
+    phone: "+34 641 482 762",
+    phoneRaw: "+34641482762",
+    phoneTel: "tel:+34641482762",
+    whatsapp: "https://wa.me/34641482762",
+    whatsappRaw: "34641482762",
+    email: "info@serviplusultrasolutionssl.com",
+    emailLink: "mailto:info@serviplusultrasolutionssl.com",
   },
 
   hours: {
@@ -80,8 +80,10 @@ export const siteConfig = {
 
   legal: {
     company: "ServiPlusUltra Solutions S.L.",
-    cif: "B-XXXXXXXX",
-    address: "Madrid, España",
+    cif: "B-26892760",
+    address: "Carrer d'Aribau 168, 1º 1ª, 08036 Barcelona",
+    registro: "Registro Mercantil de Barcelona — [Tomo ___, Folio ___, Hoja ___, Inscripción ___]",
+    updated: "17 de junio de 2026",
   },
 } as const;
 

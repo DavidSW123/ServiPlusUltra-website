@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Clock, Mail, MapPin, Phone, ShieldCheck, Star } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
 import { Container } from "@/components/ui/Container";
+import { CookiePreferencesButton } from "@/components/legal/CookiePreferencesButton";
 import { siteConfig } from "@/lib/site-config";
 
 const servicesNav = [
@@ -158,6 +159,9 @@ export function Footer() {
                       </Link>
                     </li>
                   ))}
+                  <li>
+                    <CookiePreferencesButton className="font-semibold text-cream-100/85 transition hover:text-sun-400" />
+                  </li>
                 </ul>
               </div>
             </div>
