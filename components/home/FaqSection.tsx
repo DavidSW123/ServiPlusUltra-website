@@ -3,6 +3,8 @@
 import { ChevronDown } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { faqJsonLd } from "@/lib/structured-data";
 import { cn } from "@/lib/cn";
 
 type FaqItem = { q: string; a: string };
@@ -33,6 +35,7 @@ const defaultItems: FaqItem[] = [
 export function FaqSection({ items = defaultItems }: { items?: FaqItem[] }) {
   return (
     <Section tone="cream" pad="lg">
+      <JsonLd data={faqJsonLd(items)} />
       <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5">
           <Eyebrow tone="mint" sticker>
