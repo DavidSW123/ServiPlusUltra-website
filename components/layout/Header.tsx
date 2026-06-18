@@ -87,15 +87,27 @@ export function Header() {
         )}
       >
         <div className="container-wide flex h-16 items-center justify-between gap-4 sm:h-[72px]">
-          <Link href="/" className="inline-flex shrink-0" aria-label="ServiPlusUltra Solutions S.L. — Inicio">
+          <Link
+            href="/"
+            className="inline-flex shrink-0 items-center gap-2.5"
+            aria-label="ServiPlusUltra Solutions S.L. — Inicio"
+          >
             <Image
-              src="/logo-light.png"
-              alt="ServiPlusUltra Solutions S.L."
-              width={428}
-              height={197}
+              src="/logo-icon.png"
+              alt=""
+              width={192}
+              height={192}
               priority
-              className="h-12 w-auto sm:h-14"
+              className="h-10 w-10 rounded-xl border-2 border-ink-900 sm:h-11 sm:w-11"
             />
+            <span className="flex flex-col leading-none">
+              <span className="font-display text-lg font-bold tracking-tight text-ink-900 sm:text-xl">
+                ServiPlus<span className="text-coral-500">Ultra</span>
+              </span>
+              <span className="mt-0.5 text-[10px] font-bold uppercase tracking-[0.16em] text-ink-500">
+                Solutions S.L.
+              </span>
+            </span>
           </Link>
 
           <nav className="hidden lg:flex" aria-label="Navegación principal">
