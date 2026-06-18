@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Clock, Mail, MapPin, Phone, ShieldCheck, Star } from "lucide-react";
-import { Logo } from "@/components/brand/Logo";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { CookiePreferencesButton } from "@/components/legal/CookiePreferencesButton";
 import { siteConfig } from "@/lib/site-config";
@@ -38,7 +38,13 @@ export function Footer() {
       <Container className="py-14 sm:py-20">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <Logo tone="dark" />
+            <Image
+              src="/logo-dark.png"
+              alt="ServiPlusUltra Solutions S.L."
+              width={875}
+              height={404}
+              className="h-16 w-auto"
+            />
             <p className="mt-5 max-w-md text-base text-cream-100/90">
               Multiservicios premium en Madrid y Barcelona. Electricidad, climatización y
               reparaciones del hogar con técnicos de oficio, presupuesto sin sorpresas y trabajo
