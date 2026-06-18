@@ -19,7 +19,7 @@ export function WhatsAppFab() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"
-      className={`fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full border-2 border-ink-900 bg-[#25D366] text-white shadow-sticker transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_rgba(26,26,26,1)] sm:bottom-6 sm:right-6 ${
+      className={`fixed bottom-5 right-5 z-50 hidden h-14 w-14 items-center justify-center rounded-full border-2 border-ink-900 bg-[#25D366] text-white shadow-sticker transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_rgba(26,26,26,1)] sm:bottom-6 sm:right-6 lg:flex ${
         visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0 pointer-events-none"
       }`}
     >

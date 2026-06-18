@@ -149,17 +149,25 @@ export function ContactForm() {
         </span>
       </label>
       {errors.consent && (
-        <p className="-mt-3 text-xs font-bold text-coral-600">{errors.consent[0]}</p>
+        <p role="alert" className="-mt-3 text-xs font-bold text-coral-700">{errors.consent[0]}</p>
       )}
 
       {state.status === "error" && (
-        <div className="flex items-start gap-2.5 rounded-2xl border-2 border-ink-900 bg-coral-500 p-4 text-sm font-semibold text-white shadow-sticker">
-          <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
+        <div
+          role="alert"
+          aria-live="assertive"
+          className="flex items-start gap-2.5 rounded-2xl border-2 border-ink-900 bg-coral-100 p-4 text-sm font-semibold text-ink-900 shadow-sticker"
+        >
+          <AlertCircle className="mt-0.5 h-4 w-4 shrink-0 text-coral-700" />
           <span>{state.message}</span>
         </div>
       )}
       {state.status === "success" && (
-        <div className="flex items-start gap-2.5 rounded-2xl border-2 border-ink-900 bg-mint-100 p-4 text-sm font-semibold text-ink-900 shadow-sticker">
+        <div
+          role="status"
+          aria-live="polite"
+          className="flex items-start gap-2.5 rounded-2xl border-2 border-ink-900 bg-mint-100 p-4 text-sm font-semibold text-ink-900 shadow-sticker"
+        >
           <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-mint-600" />
           <span>{state.message}</span>
         </div>
@@ -194,7 +202,7 @@ function Field({
       <div className="mt-2">{children}</div>
       {hint && !error?.length && <p className="mt-1.5 text-xs text-ink-600">{hint}</p>}
       {error && error.length > 0 && (
-        <p className="mt-1.5 text-xs font-bold text-coral-600">{error[0]}</p>
+        <p role="alert" className="mt-1.5 text-xs font-bold text-coral-700">{error[0]}</p>
       )}
     </label>
   );

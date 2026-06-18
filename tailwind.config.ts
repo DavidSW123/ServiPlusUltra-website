@@ -140,7 +140,6 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         display: ["var(--font-bricolage)", "var(--font-inter)", "sans-serif"],
-        hand: ["var(--font-caveat)", "cursive"],
       },
       fontSize: {
         "display-xl": [
