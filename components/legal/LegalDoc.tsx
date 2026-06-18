@@ -56,11 +56,11 @@ export function LegalDoc({ doc }: { doc: LegalDocContent }) {
       {/* Cabecera */}
       <section className="border-b-2 border-ink-900 bg-cream-100">
         <Container className="py-12 sm:py-16">
-          <span className="inline-flex items-center gap-2 rounded-full border-2 border-ink-900 bg-sun-400 px-3 py-1 text-xs font-bold uppercase tracking-wider text-ink-900 shadow-sticker">
+          <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.18em] text-ink-500">
             <FileText className="h-3.5 w-3.5" />
             Información legal
           </span>
-          <h1 className="mt-5 font-display text-display-md text-ink-900 sm:text-display-lg">
+          <h1 className="mt-3 font-display text-2xl font-bold text-ink-900 sm:text-3xl">
             {doc.title}
           </h1>
           <p className="mt-4 max-w-2xl text-pretty text-ink-700">{doc.intro}</p>
@@ -79,7 +79,7 @@ export function LegalDoc({ doc }: { doc: LegalDocContent }) {
                 key={i}
                 className="border-b border-ink-200 py-6 first:pt-0 last:border-b-0 last:pb-0"
               >
-                <h2 className="font-display text-xl font-bold text-ink-900 sm:text-2xl">
+                <h2 className="font-display text-lg font-bold text-ink-900 sm:text-xl">
                   {section.heading}
                 </h2>
                 <div className="mt-2 text-sm sm:text-[15px]">{renderBody(section.body)}</div>

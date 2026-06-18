@@ -124,8 +124,8 @@ export function ContactForm() {
       <div className="rounded-2xl border-2 border-ink-900/15 bg-cream-100 p-4 text-xs leading-relaxed text-ink-600">
         <strong className="font-bold text-ink-800">Información básica sobre protección de datos.</strong>{" "}
         Responsable: ServiPlusUltra Solutions S.L. Finalidad: atender tu solicitud de presupuesto o
-        contacto. Legitimación: tu consentimiento. Destinatarios: proveedores de email y hosting
-        (Resend y Vercel, con garantías adecuadas). Derechos: acceso, rectificación, supresión y
+        contacto. Legitimación: tu consentimiento. Destinatarios: proveedores de email y alojamiento
+        web con garantías adecuadas. Derechos: acceso, rectificación, supresión y
         demás detallados en la{" "}
         <a href="/privacidad" className="font-bold text-brand-700 underline hover:text-coral-600">
           Política de privacidad

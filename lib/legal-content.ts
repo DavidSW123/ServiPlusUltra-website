@@ -149,7 +149,7 @@ No recogemos datos especialmente protegidos (categorías especiales del artícul
 
 Si usted contacta con nosotros por otros medios facilitados en el sitio (teléfono, WhatsApp o correo electrónico), trataremos igualmente los datos que nos proporcione con la misma finalidad de atender su solicitud y sobre la base de su consentimiento.
 
-Además de los datos del formulario, por el mero acceso al sitio web nuestro proveedor de alojamiento (Vercel) puede tratar de forma automática datos técnicos de conexión, como la dirección IP, el tipo de navegador o la fecha y hora de acceso, con la finalidad de prestar el servicio de alojamiento, garantizar la seguridad de la red y prevenir usos fraudulentos. La base jurídica de este tratamiento es el interés legítimo del responsable (artículo 6.1.f del RGPD) en mantener la seguridad y el correcto funcionamiento del sitio. Estos datos no se utilizan para identificarle personalmente.`,
+Además de los datos del formulario, por el mero acceso al sitio web nuestro proveedor de alojamiento web puede tratar de forma automática datos técnicos de conexión, como la dirección IP, el tipo de navegador o la fecha y hora de acceso, con la finalidad de prestar el servicio de alojamiento, garantizar la seguridad de la red y prevenir usos fraudulentos. La base jurídica de este tratamiento es el interés legítimo del responsable (artículo 6.1.f del RGPD) en mantener la seguridad y el correcto funcionamiento del sitio. Estos datos no se utilizan para identificarle personalmente.`,
     },
     {
       heading: "3. Finalidad del tratamiento",
@@ -173,19 +173,19 @@ Una vez atendida, conservaremos los datos debidamente bloqueados durante los pla
       heading: "6. Destinatarios y encargados del tratamiento",
       body: `Sus datos no se cederán a terceros, salvo obligación legal. No obstante, para poder prestar el servicio del sitio web y gestionar su solicitud, intervienen los siguientes proveedores que actúan como encargados del tratamiento por cuenta de ServiPlusUltra Solutions S.L., con los que se suscriben los correspondientes contratos de encargo del tratamiento conforme al artículo 28 del RGPD:
 
-- Resend (Resend, Inc., Estados Unidos): proveedor del servicio de envío de los correos electrónicos generados por el formulario de contacto.
-- Vercel (Vercel Inc., Estados Unidos): proveedor de alojamiento (hosting) e infraestructura del sitio web.
+- Un proveedor de servicios de envío de correo electrónico (ubicado en Estados Unidos, con garantías adecuadas): gestiona el envío de los mensajes generados por el formulario de contacto.
+- Un proveedor de alojamiento web e infraestructura (ubicado en Estados Unidos, con garantías adecuadas): en cuyos servidores se aloja este sitio.
 
-Adicionalmente, están previstos los siguientes servicios de Google (prestados por Google Ireland Ltd. y/o Google LLC), que actualmente no están activos y que solo se activarán previo consentimiento explícito del usuario a través del banner de cookies:
+Adicionalmente, están previstos servicios de analítica y de publicidad de terceros, que actualmente no están activos y que solo se activarán previo consentimiento explícito del usuario a través del banner de cookies:
 
-- Google Analytics: servicio de medición y analítica del uso del sitio web.
-- Google Ads: servicio de publicidad y medición de campañas.
+- Un servicio de analítica web, para medir de forma agregada el uso del sitio.
+- Un servicio de publicidad online, para la gestión y medición de campañas.
 
-Mientras usted no preste su consentimiento a las cookies analíticas y publicitarias, estos servicios de Google no tratarán sus datos a través de este sitio web.`,
+Mientras usted no preste su consentimiento a las cookies analíticas y publicitarias, estos servicios no tratarán sus datos a través de este sitio web. Encontrará el detalle en nuestra Política de cookies.`,
     },
     {
       heading: "7. Transferencias internacionales de datos",
-      body: `Algunos de los proveedores indicados (Resend, Vercel y, en su caso, Google) están ubicados o tratan datos en Estados Unidos, por lo que el tratamiento puede implicar una transferencia internacional de datos fuera del Espacio Económico Europeo.
+      body: `Algunos de nuestros proveedores (de alojamiento web, de envío de correo electrónico y, en su caso, de analítica y publicidad) están ubicados o tratan datos en Estados Unidos, por lo que el tratamiento puede implicar una transferencia internacional de datos fuera del Espacio Económico Europeo.
 
 Dichas transferencias se realizan al amparo de garantías adecuadas conforme al Capítulo V del RGPD, en particular mediante las Cláusulas Contractuales Tipo aprobadas por la Comisión Europea y/o la adhesión del importador al EU-US Data Privacy Framework (marco de adecuación reconocido por la Comisión Europea). Estas garantías tienen por objeto asegurar que sus datos disfruten de un nivel de protección equivalente al exigido por la normativa europea.
 
@@ -195,7 +195,7 @@ Puede solicitarnos información adicional sobre estas garantías y obtener una c
       heading: "8. Cookies",
       body: `Una cookie es un pequeño archivo de texto que un sitio web almacena en su dispositivo (ordenador, móvil o tableta) cuando usted lo visita, y que permite reconocer su navegador y recordar determinada información.
 
-Actualmente este sitio web solo utiliza cookies técnicas o estrictamente necesarias, que por su naturaleza no requieren su consentimiento. Están previstas cookies analíticas (Google Analytics) y publicitarias (Google Ads), que solo se instalarán y activarán cuando usted preste su consentimiento explícito a través del banner de cookies.
+Actualmente este sitio web solo utiliza cookies técnicas o estrictamente necesarias, que por su naturaleza no requieren su consentimiento. Están previstas cookies analíticas y publicitarias de terceros, que solo se instalarán y activarán cuando usted preste su consentimiento explícito a través del banner de cookies.
 
 Encontrará información detallada sobre las cookies utilizadas y previstas, así como sobre cómo gestionarlas, en nuestra Política de cookies, a la que se remite expresamente esta Política de privacidad.`,
     },
@@ -268,7 +268,7 @@ Las cookies no dañan el dispositivo del usuario y, salvo las estrictamente nece
 Según quién las gestiona:
 
 - Cookies propias: las gestiona el propio responsable del sitio (ServiPlusUltra) desde sus equipos o dominios.
-- Cookies de terceros: las gestiona un tercero distinto del responsable (por ejemplo, Google) que trata la información recogida a través de ellas.
+- Cookies de terceros: las gestiona un tercero distinto del responsable (por ejemplo, un proveedor de analítica o de publicidad) que trata la información recogida a través de ellas.
 
 Según su finalidad:
 
@@ -287,8 +287,8 @@ Según su duración:
 
 No obstante, ServiPlusUltra tiene previsto incorporar en el futuro las siguientes cookies de terceros:
 
-- Cookies analíticas de Google Analytics (servicio de Google), para analizar de forma agregada el uso del sitio.
-- Cookies publicitarias de Google Ads (servicio de Google), para la gestión y medición de campañas publicitarias.
+- Cookies analíticas de un proveedor externo de analítica web, para analizar de forma agregada el uso del sitio.
+- Cookies publicitarias de un proveedor externo de publicidad online, para la gestión y medición de campañas publicitarias.
 
 Estas cookies analíticas y publicitarias todavía no están activas. Cuando lo estén, solo se instalarán previo consentimiento explícito del usuario a través del banner de cookies, y esta política se actualizará para detallarlas en la tabla siguiente (nombre, titular, finalidad y plazo de conservación).`,
     },
@@ -317,7 +317,7 @@ Cookies técnicas / estrictamente necesarias (propias):
 
 Cookies analíticas y publicitarias (de terceros):
 
-- Actualmente NO se utilizan. Las cookies analíticas de Google Analytics y las cookies publicitarias de Google Ads están previstas y se incorporarán a esta tabla, con el detalle de su nombre, titular, finalidad y plazo de conservación, en el momento en que se activen y siempre previo consentimiento del usuario.
+- Actualmente NO se utilizan. Las cookies analíticas y publicitarias de terceros están previstas y se incorporarán a esta tabla, con el detalle de su nombre, titular, finalidad y plazo de conservación, en el momento en que se activen y siempre previo consentimiento del usuario.
 
 Nota: la denominación exacta y el número de cookies técnicas pueden variar por motivos operativos o de seguridad. En cualquier caso, todas ellas responden a las finalidades técnicas descritas en esta política.`,
     },
@@ -343,11 +343,11 @@ También puede utilizar el modo de navegación privada o de incógnito de su nav
     },
     {
       heading: "Transferencias internacionales de datos",
-      body: `Las cookies analíticas y publicitarias previstas son gestionadas por Google (Google Ireland Ltd. y/o Google LLC). El uso de los servicios de Google (Google Analytics y Google Ads) puede implicar una transferencia internacional de datos a los Estados Unidos.
+      body: `Las cookies analíticas y publicitarias previstas son gestionadas por proveedores externos que pueden tratar datos en los Estados Unidos, por lo que su uso puede implicar una transferencia internacional de datos fuera del Espacio Económico Europeo.
 
 Dichas transferencias se realizan con las garantías adecuadas exigidas por el RGPD, en concreto mediante la adhesión del importador al EU-US Data Privacy Framework (Marco de Privacidad de Datos UE-EE. UU.) y/o mediante la suscripción de Cláusulas Contractuales Tipo aprobadas por la Comisión Europea.
 
-Asimismo, los proveedores de servicios técnicos del sitio (el proveedor de alojamiento Vercel Inc. y el proveedor de envío de correos electrónicos Resend, Inc.), ambos con sede en los Estados Unidos, actúan como encargados del tratamiento y aplican igualmente garantías adecuadas para las transferencias internacionales (Cláusulas Contractuales Tipo y/o EU-US Data Privacy Framework).`,
+Asimismo, nuestros proveedores de servicios técnicos (alojamiento web y envío de correo electrónico), con sede en los Estados Unidos, actúan como encargados del tratamiento y aplican igualmente garantías adecuadas para las transferencias internacionales (Cláusulas Contractuales Tipo y/o EU-US Data Privacy Framework).`,
     },
     {
       heading: "Sus derechos en materia de protección de datos",
