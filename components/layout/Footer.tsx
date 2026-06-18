@@ -43,7 +43,7 @@ export function Footer() {
               alt="ServiPlusUltra Solutions S.L."
               width={875}
               height={404}
-              className="h-16 w-auto"
+              className="h-20 w-auto sm:h-28"
             />
             <p className="mt-5 max-w-md text-base text-cream-100/90">
               Multiservicios premium en Madrid y Barcelona. Electricidad, climatización y

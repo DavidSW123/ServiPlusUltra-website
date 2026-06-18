@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { Menu, Phone, X } from "lucide-react";
-import { Logo } from "@/components/brand/Logo";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 import { siteConfig } from "@/lib/site-config";
@@ -87,7 +87,16 @@ export function Header() {
         )}
       >
         <div className="container-wide flex h-16 items-center justify-between gap-4 sm:h-[72px]">
-          <Logo />
+          <Link href="/" className="inline-flex shrink-0" aria-label="ServiPlusUltra Solutions S.L. — Inicio">
+            <Image
+              src="/logo-light.png"
+              alt="ServiPlusUltra Solutions S.L."
+              width={428}
+              height={197}
+              priority
+              className="h-12 w-auto sm:h-14"
+            />
+          </Link>
 
           <nav className="hidden lg:flex" aria-label="Navegación principal">
             <ul className="flex items-center gap-1">
