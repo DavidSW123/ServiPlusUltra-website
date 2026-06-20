@@ -16,9 +16,20 @@ const marqueeItems = [
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-cream-100">
-      {/* Marquee superior */}
-      <div className="border-y-2 border-ink-900 bg-brand-600 py-2 text-cream-50">
+    <section className="relative isolate overflow-hidden bg-brand-700 text-cream-50">
+      {/* Capas decorativas premium */}
+      <div className="absolute inset-0 -z-10 bg-dots-soft bg-dots opacity-[0.18]" aria-hidden />
+      <div
+        className="absolute -top-32 right-[-12%] -z-10 h-[540px] w-[540px] rounded-full bg-sun-400/20 blur-3xl"
+        aria-hidden
+      />
+      <div
+        className="absolute -bottom-40 left-[-12%] -z-10 h-[440px] w-[440px] rounded-full bg-coral-500/20 blur-3xl"
+        aria-hidden
+      />
+
+      {/* Marquee superior — barra oscura de contraste */}
+      <div className="relative border-b-2 border-ink-900 bg-ink-900 py-2 text-cream-50">
         <div className="flex animate-marquee whitespace-nowrap">
           {[...marqueeItems, ...marqueeItems].map((item, i) => (
             <span key={i} className="mx-6 flex items-center gap-3 text-sm font-bold uppercase tracking-wider">
@@ -29,28 +40,27 @@ export function Hero() {
         </div>
       </div>
 
-      <Container className="relative pt-12 pb-20 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-28">
+      <Container className="relative pt-14 pb-20 sm:pt-20 sm:pb-28">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-12">
           {/* Columna izquierda */}
           <div className="lg:col-span-7">
-            {/* Sticker rotado superior */}
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border-2 border-ink-900 bg-coral-500 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-sticker rotate-sticker-1">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border-2 border-ink-900 bg-sun-400 px-3 py-1 text-xs font-bold uppercase tracking-wider text-ink-900 shadow-sticker rotate-sticker-1">
               <Star className="h-3.5 w-3.5 fill-current" />
               Técnicos de oficio · Madrid + Barcelona
             </div>
 
-            <h1 className="font-display text-display-xl text-ink-900">
+            <h1 className="font-display text-display-xl font-extrabold tracking-tight text-cream-50">
               Reformas, urgencias{" "}
               <br className="hidden sm:block" />y todo{" "}
               <span className="relative inline-block">
-                <span className="relative z-10">lo demás.</span>
-                <span className="absolute inset-x-0 bottom-1 -z-0 h-3 bg-sun-400" aria-hidden />
+                <span className="relative z-10 text-sun-400">lo demás.</span>
+                <span className="absolute inset-x-0 bottom-1 -z-0 h-3 bg-coral-500/60" aria-hidden />
               </span>
               <br className="hidden sm:block" />
-              <span className="text-coral-500">Bien hechas.</span>
+              Bien hechas.
             </h1>
 
-            <p className="mt-6 max-w-2xl text-pretty text-lg text-ink-700">
+            <p className="mt-6 max-w-2xl text-pretty text-lg text-cream-100/90">
               Equipo de oficio en Madrid y Barcelona. Electricidad, fontanería, climatización, carpintería.
               Particulares, empresas y constructoras. Tú llamas, nosotros vamos, lo resolvemos.
             </p>
@@ -69,13 +79,13 @@ export function Hero() {
 
             {/* Pills de datos */}
             <div className="mt-10 flex flex-wrap gap-3">
-              <DataPill bg="bg-brand-600" text="text-white" value="12 meses*" label="de garantía" />
-              <DataPill bg="bg-sun-400" text="text-ink-900" value="<4h" label="urgencias en Barcelona" />
+              <DataPill bg="bg-sun-400" text="text-ink-900" value="12 meses*" label="de garantía" />
+              <DataPill bg="bg-cream-50" text="text-ink-900" value="<4h" label="urgencias en Barcelona" />
               <DataPill bg="bg-mint-100" text="text-ink-900" value="Gratis" label="presupuesto sin compromiso" />
             </div>
           </div>
 
-          {/* Columna derecha — Tarjeta presupuesto + Stickers flotantes */}
+          {/* Columna derecha — Tarjeta presupuesto (resalta sobre el cobalto) */}
           <div className="relative lg:col-span-5">
             {/* Sticker flotante 1 */}
             <div className="absolute -top-6 -left-4 z-20 hidden rotate-sticker-3 sm:block">
@@ -92,7 +102,7 @@ export function Hero() {
             </div>
 
             {/* Tarjeta principal */}
-            <div className="relative rounded-3xl border-2 border-ink-900 bg-cream-50 p-7 shadow-sticker sm:p-8">
+            <div className="relative rounded-3xl border-2 border-ink-900 bg-cream-50 p-7 text-ink-900 shadow-sticker sm:p-8">
               <div className="flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-ink-900 bg-coral-500 text-white">
                   <Wrench className="h-6 w-6" />
