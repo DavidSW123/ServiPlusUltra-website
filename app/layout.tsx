@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { fontInter, fontBricolage } from "@/lib/fonts";
+import { fontInter, fontDisplay } from "@/lib/fonts";
 import { cn } from "@/lib/cn";
 import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
@@ -49,10 +49,10 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={cn(fontInter.variable, fontBricolage.variable)}
+      className={cn(fontInter.variable, fontDisplay.variable)}
       suppressHydrationWarning
     >
-      <body className="bg-cream-100 font-sans text-ink-900 antialiased">{children}</body>
+      <body className="bg-ink-50 font-sans text-ink-900 antialiased">{children}</body>
     </html>
   );
 }

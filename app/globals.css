@@ -4,13 +4,9 @@
 
 @layer base {
   :root {
-    /* Bold & Friendly palette */
-    --color-cream: 255 248 238;
-    --color-brand: 45 82 245;
-    --color-sun: 255 212 59;
-    --color-coral: 255 107 71;
-    --color-mint: 212 245 225;
-    --color-ink: 26 26 26;
+    --color-cobalt: 59 94 240;
+    --color-copper: 199 114 55;
+    --color-ink: 17 23 37;
   }
 
   html {
@@ -20,7 +16,7 @@
 
   html,
   body {
-    @apply bg-cream-100 text-ink-900 antialiased;
+    @apply bg-ink-50 text-ink-900 antialiased;
     text-rendering: optimizeLegibility;
   }
 
@@ -30,10 +26,9 @@
   }
 
   ::selection {
-    @apply bg-brand-600 text-white;
+    @apply bg-cobalt-500 text-white;
   }
 
-  /* Tipografía display por defecto en headings */
   h1,
   h2,
   h3,
@@ -41,9 +36,19 @@
     @apply font-display tracking-tight text-ink-900;
   }
 
-  /* Focus accesible y visible */
   :focus-visible {
-    @apply outline-none ring-2 ring-brand-600 ring-offset-2 ring-offset-cream-100;
+    @apply outline-none ring-2 ring-cobalt-500 ring-offset-2 ring-offset-white;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
@@ -51,89 +56,53 @@
   .container-narrow {
     @apply mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8;
   }
-
   .container-wide {
     @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
   }
-
   .text-balance {
     text-wrap: balance;
   }
-
   .text-pretty {
     text-wrap: pretty;
   }
 
-  /* Subrayado handwritten Caveat */
-  .underline-hand {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'><path d='M2 7 Q 50 1, 100 6 T 198 5' stroke='%23FFD43B' stroke-width='5' fill='none' stroke-linecap='round'/></svg>");
-    background-repeat: no-repeat;
-    background-position: 0 92%;
-    background-size: 100% 0.4em;
-    padding-bottom: 0.1em;
+  /* Texto en gradiente cobalto→cian (acento tech) */
+  .text-gradient {
+    @apply bg-gradient-to-r from-cobalt-400 via-cobalt-300 to-cyan-400 bg-clip-text text-transparent;
+  }
+  /* Acento cobre */
+  .text-copper-gradient {
+    @apply bg-gradient-to-r from-copper-400 to-copper-500 bg-clip-text text-transparent;
+  }
+  /* Compat con clase antigua */
+  .text-ultra-gradient {
+    @apply bg-gradient-to-r from-cobalt-400 via-cobalt-300 to-cyan-400 bg-clip-text text-transparent;
   }
 
-  .underline-hand-coral {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 12' preserveAspectRatio='none'><path d='M2 7 Q 50 1, 100 6 T 198 5' stroke='%23FF6B47' stroke-width='5' fill='none' stroke-linecap='round'/></svg>");
-    background-repeat: no-repeat;
-    background-position: 0 92%;
-    background-size: 100% 0.4em;
-    padding-bottom: 0.1em;
+  /* Etiqueta / eyebrow */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-cobalt-100 bg-cobalt-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-cobalt-700;
   }
 
-  /* Sticker rotado (badge) */
-  .sticker {
-    @apply inline-flex items-center gap-1.5 rounded-full border-2 border-ink-900 px-3 py-1 text-xs font-bold uppercase tracking-wide shadow-sticker;
+  /* Tarjeta clara */
+  .card {
+    @apply rounded-2xl border border-ink-200 bg-white shadow-soft transition duration-300;
+  }
+  .card-hover {
+    @apply hover:-translate-y-1 hover:border-cobalt-200 hover:shadow-card;
   }
 
-  /* Pill — sin sombra dura */
-  .pill {
-    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold;
+  /* Glass sobre fondos oscuros */
+  .glass {
+    @apply rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-md;
   }
 
-  /* Card brutalist border + sticker shadow */
-  .card-pop {
-    @apply rounded-3xl border-2 border-ink-900 shadow-sticker transition hover:-translate-y-1 hover:shadow-[8px_8px_0_0_rgba(26,26,26,1)];
-  }
-
-  /* Inputs del formulario */
+  /* Inputs */
   .form-input {
-    @apply w-full rounded-2xl border-2 border-ink-900 bg-white px-4 py-3 text-sm text-ink-900 placeholder:text-ink-500 transition focus:border-brand-600 focus:outline-none focus:ring-2 focus:ring-brand-600/30;
+    @apply w-full rounded-xl border border-ink-200 bg-white px-4 py-3 text-sm text-ink-900 placeholder:text-ink-400 transition focus:border-cobalt-500 focus:outline-none focus:ring-2 focus:ring-cobalt-500/25;
   }
-
   .form-input:invalid:not(:focus):not(:placeholder-shown) {
-    @apply border-coral-500;
-  }
-
-  /* Botón shine compat */
-  .btn-shine {
-    background-image: linear-gradient(
-      110deg,
-      transparent 30%,
-      rgba(255, 255, 255, 0.18) 50%,
-      transparent 70%
-    );
-    background-size: 200% 100%;
-    background-repeat: no-repeat;
-    background-position: -100% 0;
-    transition: background-position 0.6s ease;
-  }
-
-  .btn-shine:hover {
-    background-position: 100% 0;
-  }
-}
-
-/* Respeta la preferencia de movimiento reducido (WCAG 2.2.2 / 2.3.3): para el
-   marquee, los pings y las transiciones para quien lo tenga activado. */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+    @apply border-copper-400;
   }
 }
 
@@ -141,24 +110,11 @@
   .mask-fade-bottom {
     mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   }
-
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
-
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
-  }
-
-  /* Rotaciones tipo sticker */
-  .rotate-sticker-1 {
-    transform: rotate(-3deg);
-  }
-  .rotate-sticker-2 {
-    transform: rotate(2deg);
-  }
-  .rotate-sticker-3 {
-    transform: rotate(-5deg);
   }
 }

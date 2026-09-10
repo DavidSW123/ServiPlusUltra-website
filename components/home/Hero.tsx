@@ -1,11 +1,11 @@
-import { ArrowRight, Phone, Star, Wrench } from "lucide-react";
+import { ArrowRight, Phone, ShieldCheck, Wrench, Zap } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { siteConfig } from "@/lib/site-config";
 
 const marqueeItems = [
   "URGENCIAS PRIORITARIAS",
-  "REFORMAS DE VIVIENDAS",
+  "REFORMAS INTEGRALES",
   "MANTENIMIENTO DE NAVES",
   "ELECTRICIDAD",
   "FONTANERÍA",
@@ -14,26 +14,31 @@ const marqueeItems = [
   "OBRAS PARA CONSTRUCTORAS",
 ];
 
+const trust = [
+  { icon: ShieldCheck, label: "12 meses de garantía*" },
+  { icon: Zap, label: "Respuesta <4h en Barcelona" },
+  { icon: Wrench, label: "Equipo de oficio propio" },
+];
+
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-brand-700 text-cream-50">
-      {/* Capas decorativas premium */}
-      <div className="absolute inset-0 -z-10 bg-dots-soft bg-dots opacity-[0.18]" aria-hidden />
-      <div
-        className="absolute -top-32 right-[-12%] -z-10 h-[540px] w-[540px] rounded-full bg-sun-400/20 blur-3xl"
-        aria-hidden
-      />
-      <div
-        className="absolute -bottom-40 left-[-12%] -z-10 h-[440px] w-[440px] rounded-full bg-coral-500/20 blur-3xl"
-        aria-hidden
-      />
+    <section className="relative isolate overflow-hidden bg-cobalt-950 text-white">
+      {/* Fondo tech */}
+      <div className="absolute inset-0 -z-10 bg-cobalt-gradient" aria-hidden />
+      <div className="absolute inset-0 -z-10 bg-grid-tech bg-grid opacity-40" aria-hidden />
+      <div className="absolute inset-0 -z-10 bg-cobalt-radial opacity-80" aria-hidden />
+      <div className="absolute -right-40 -top-24 -z-10 h-[520px] w-[520px] rounded-full bg-cobalt-500/25 blur-3xl" aria-hidden />
+      <div className="absolute -bottom-40 -left-32 -z-10 h-[440px] w-[440px] rounded-full bg-copper-500/15 blur-3xl" aria-hidden />
 
-      {/* Marquee superior — barra oscura de contraste */}
-      <div className="relative border-b-2 border-ink-900 bg-ink-900 py-2 text-cream-50">
-        <div className="flex animate-marquee whitespace-nowrap">
+      {/* Marquee superior fino */}
+      <div className="relative border-b border-white/10">
+        <div className="flex animate-marquee whitespace-nowrap py-2.5">
           {[...marqueeItems, ...marqueeItems].map((item, i) => (
-            <span key={i} className="mx-6 flex items-center gap-3 text-sm font-bold uppercase tracking-wider">
-              <span className="text-sun-400">★</span>
+            <span
+              key={i}
+              className="mx-5 flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/45"
+            >
+              <span className="h-1 w-1 rounded-full bg-cyan-400" />
               {item}
             </span>
           ))}
@@ -41,130 +46,107 @@ export function Hero() {
       </div>
 
       <Container className="relative pt-14 pb-20 sm:pt-20 sm:pb-28">
-        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-12">
-          {/* Columna izquierda */}
+        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
+          {/* Izquierda */}
           <div className="lg:col-span-7">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border-2 border-ink-900 bg-sun-400 px-3 py-1 text-xs font-bold uppercase tracking-wider text-ink-900 shadow-sticker rotate-sticker-1">
-              <Star className="h-3.5 w-3.5 fill-current" />
-              Técnicos de oficio · Madrid + Barcelona
-            </div>
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-cobalt-100 backdrop-blur">
+              <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+              Multiservicios técnicos · Madrid + Barcelona
+            </span>
 
-            <h1 className="font-display text-display-xl font-extrabold tracking-tight text-cream-50">
+            <h1 className="mt-6 font-display text-display-xl text-white">
               Reformas, urgencias{" "}
               <br className="hidden sm:block" />y todo{" "}
-              <span className="relative inline-block">
-                <span className="relative z-10 text-sun-400">lo demás.</span>
-                <span className="absolute inset-x-0 bottom-1 -z-0 h-3 bg-coral-500/60" aria-hidden />
-              </span>
-              <br className="hidden sm:block" />
-              Bien hechas.
+              <span className="text-copper-400">lo demás.</span>{" "}
+              <span className="text-white/95">Bien hechas.</span>
             </h1>
 
-            <p className="mt-6 max-w-2xl text-pretty text-lg text-cream-100/90">
-              Equipo de oficio en Madrid y Barcelona. Electricidad, fontanería, climatización, carpintería.
-              Particulares, empresas y constructoras. Tú llamas, nosotros vamos, lo resolvemos.
+            <p className="mt-6 max-w-xl text-pretty text-lg text-cobalt-100/80">
+              Equipo de oficio en Madrid y Barcelona. Electricidad, fontanería, climatización,
+              carpintería y obra. Particulares, empresas y constructoras. Tú llamas, vamos y lo
+              resolvemos.
             </p>
 
-            {/* CTAs */}
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Button href={siteConfig.contact.phoneTel} variant="primary" size="lg">
                 <Phone className="h-5 w-5" />
                 Hablar con un técnico
               </Button>
-              <Button href="/contacto" variant="ghost" size="lg">
+              <Button href="/contacto" variant="outline" size="lg">
                 Pedir presupuesto
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>
 
-            {/* Pills de datos */}
-            <div className="mt-10 flex flex-wrap gap-3">
-              <DataPill bg="bg-sun-400" text="text-ink-900" value="12 meses*" label="de garantía" />
-              <DataPill bg="bg-cream-50" text="text-ink-900" value="<4h" label="urgencias en Barcelona" />
-              <DataPill bg="bg-mint-100" text="text-ink-900" value="Gratis" label="presupuesto sin compromiso" />
+            <div className="mt-9 flex flex-wrap gap-2.5">
+              {trust.map(({ icon: Icon, label }) => (
+                <span
+                  key={label}
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-3.5 py-1.5 text-xs font-semibold text-cobalt-100/90 backdrop-blur"
+                >
+                  <Icon className="h-3.5 w-3.5 text-cyan-400" />
+                  {label}
+                </span>
+              ))}
             </div>
           </div>
 
-          {/* Columna derecha — Tarjeta presupuesto (resalta sobre el cobalto) */}
-          <div className="relative lg:col-span-5">
-            {/* Sticker flotante 1 */}
-            <div className="absolute -top-6 -left-4 z-20 hidden rotate-sticker-3 sm:block">
-              <div className="rounded-full border-2 border-ink-900 bg-sun-400 px-4 py-2 text-xs font-bold uppercase shadow-sticker">
-                Garantía 12 meses* ✦
-              </div>
-            </div>
+          {/* Derecha — tarjeta glass */}
+          <div className="lg:col-span-5">
+            <div className="relative rounded-3xl border border-white/[0.12] bg-white/[0.07] p-6 shadow-elevate backdrop-blur-xl sm:p-7">
+              <div className="pointer-events-none absolute inset-x-8 -top-px h-px bg-cyan-line" />
 
-            {/* Sticker flotante 2 */}
-            <div className="absolute -bottom-4 -right-2 z-20 hidden rotate-sticker-2 sm:block">
-              <div className="rounded-full border-2 border-ink-900 bg-coral-500 px-4 py-2 text-xs font-bold uppercase text-white shadow-sticker">
-                Sin sub-contratas
-              </div>
-            </div>
-
-            {/* Tarjeta principal */}
-            <div className="relative rounded-3xl border-2 border-ink-900 bg-cream-50 p-7 text-ink-900 shadow-sticker sm:p-8">
               <div className="flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-ink-900 bg-coral-500 text-white">
-                  <Wrench className="h-6 w-6" />
-                </div>
+                <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-cobalt-500 text-white shadow-glow-cobalt">
+                  <Wrench className="h-5 w-5" />
+                </span>
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-ink-600">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-cobalt-100/70">
                     Presupuesto sin sorpresas
                   </p>
-                  <p className="font-display text-xl font-bold text-ink-900">Cuéntanos qué pasa</p>
+                  <p className="font-display text-lg font-semibold text-white">Cuéntanos qué pasa</p>
                 </div>
               </div>
 
-              <p className="mt-5 text-sm leading-relaxed text-ink-700">
+              <p className="mt-5 text-sm leading-relaxed text-cobalt-100/75">
                 Un tubo roto a las 11 de la noche. Una reforma completa de baño. La instalación
-                eléctrica de tu local. Lo describes, vamos, te decimos qué cuesta.
+                eléctrica de tu local. Lo describes, vamos y te decimos qué cuesta.
               </p>
 
-              <div className="mt-6 space-y-2.5">
+              <div className="mt-6 space-y-2">
                 <a
                   href={siteConfig.contact.phoneTel}
-                  className="flex items-center justify-between rounded-2xl border-2 border-ink-900 bg-cream-100 px-4 py-3 text-sm font-semibold transition hover:bg-sun-400"
+                  className="flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm transition hover:border-cyan-400/40 hover:bg-white/[0.08]"
                 >
-                  <span className="flex items-center gap-2 text-ink-700">
+                  <span className="flex items-center gap-2 text-cobalt-100/80">
                     <Phone className="h-4 w-4" />
                     Teléfono directo
                   </span>
-                  <span className="font-bold text-ink-900">{siteConfig.contact.phone}</span>
+                  <span className="font-semibold text-white">{siteConfig.contact.phone}</span>
                 </a>
                 <a
                   href={siteConfig.contact.whatsapp}
-                  className="flex items-center justify-between rounded-2xl border-2 border-ink-900 bg-mint-100 px-4 py-3 text-sm font-semibold transition hover:bg-mint-200"
+                  className="flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-sm transition hover:border-cyan-400/40 hover:bg-white/[0.08]"
                 >
-                  <span className="text-ink-700">WhatsApp con fotos</span>
-                  <span className="font-bold text-ink-900">Enviar →</span>
+                  <span className="text-cobalt-100/80">WhatsApp con fotos</span>
+                  <span className="font-semibold text-cyan-400">Enviar →</span>
                 </a>
                 <a
                   href="/contacto"
-                  className="flex items-center justify-between rounded-2xl border-2 border-ink-900 bg-brand-600 px-4 py-3 text-sm font-bold text-white transition hover:bg-brand-700"
+                  className="flex items-center justify-between rounded-xl bg-copper-500 px-4 py-3 text-sm font-semibold text-white shadow-glow-copper transition hover:bg-copper-600"
                 >
                   Formulario de presupuesto
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
 
-              <p className="mt-5 text-[11px] font-semibold uppercase tracking-wider text-ink-500">
-                Madrid + Barcelona · Particulares, comercios y constructoras
+              <p className="mt-5 text-[11px] font-medium uppercase tracking-wider text-cobalt-100/50">
+                Particulares · Constructoras · Inmobiliarias · Comercios
               </p>
             </div>
           </div>
         </div>
       </Container>
     </section>
-  );
-}
-
-function DataPill({ bg, text, value, label }: { bg: string; text: string; value: string; label: string }) {
-  return (
-    <div
-      className={`flex items-center gap-3 rounded-full border-2 border-ink-900 px-4 py-2 shadow-sticker ${bg} ${text}`}
-    >
-      <span className="font-display text-2xl font-bold leading-none">{value}</span>
-      <span className="text-xs font-bold uppercase leading-tight tracking-wider">{label}</span>
-    </div>
   );
 }

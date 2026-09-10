@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, Phone, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
@@ -31,16 +31,12 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
+  useEffect(() => setOpen(false), [pathname]);
 
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
-      const onKey = (e: KeyboardEvent) => {
-        if (e.key === "Escape") setOpen(false);
-      };
+      const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
       window.addEventListener("keydown", onKey);
       return () => {
         document.body.style.overflow = "";
@@ -50,61 +46,52 @@ export function Header() {
     document.body.style.overflow = "";
   }, [open]);
 
-  const isActive = (href: string) => {
-    if (href === "/") return pathname === "/";
-    return pathname?.startsWith(href);
-  };
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname?.startsWith(href);
 
   return (
     <>
-      {/* Topbar superior — estilo sticker, solo desktop */}
-      <div className="hidden border-b-2 border-ink-900 bg-ink-900 text-cream-50 md:block">
-        <div className="container-wide flex h-9 items-center justify-between text-xs font-semibold">
+      {/* Topbar */}
+      <div className="hidden bg-ink-950 text-white/70 md:block">
+        <div className="container-wide flex h-9 items-center justify-between text-xs">
           <span className="flex items-center gap-2">
-            <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-mint-300" />
-            <span className="uppercase tracking-wider">{siteConfig.hours.weekdays}</span>
+            <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+            {siteConfig.hours.weekdays}
           </span>
           <div className="flex items-center gap-4">
-            <a
-              href={siteConfig.contact.phoneTel}
-              className="flex items-center gap-1.5 transition hover:text-sun-400"
-            >
+            <a href={siteConfig.contact.phoneTel} className="flex items-center gap-1.5 transition hover:text-white">
               <Phone className="h-3.5 w-3.5" />
               {siteConfig.contact.phone}
             </a>
-            <span className="text-cream-50/40">·</span>
-            <span className="uppercase tracking-wider text-sun-400">★ Madrid + Barcelona</span>
+            <span className="text-white/25">·</span>
+            <span className="tracking-wide text-cyan-400">Madrid · Barcelona</span>
           </div>
         </div>
       </div>
 
       <header
         className={cn(
-          "sticky top-0 z-40 w-full border-b-2 transition-all duration-300",
+          "sticky top-0 z-40 w-full border-b transition-all duration-300",
           scrolled
-            ? "border-ink-900 bg-cream-50 shadow-sticker"
-            : "border-ink-900/0 bg-cream-100/95 backdrop-blur-sm",
+            ? "border-ink-200 bg-white/90 shadow-soft backdrop-blur-md"
+            : "border-transparent bg-white/70 backdrop-blur-sm",
         )}
       >
         <div className="container-wide flex h-16 items-center justify-between gap-4 sm:h-[72px]">
-          <Link
-            href="/"
-            className="inline-flex shrink-0 items-center gap-2.5"
-            aria-label="ServiPlusUltra Solutions S.L. — Inicio"
-          >
+          <Link href="/" className="inline-flex shrink-0 items-center gap-2.5" aria-label="ServiPlusUltra Solutions S.L. — Inicio">
             <Image
               src="/logo-icon.png"
               alt=""
               width={192}
               height={192}
               priority
-              className="h-10 w-10 rounded-xl border-2 border-ink-900 sm:h-11 sm:w-11"
+              className="h-10 w-10 rounded-xl sm:h-11 sm:w-11"
             />
             <span className="flex flex-col leading-none">
               <span className="font-display text-lg font-bold tracking-tight text-ink-900 sm:text-xl">
-                ServiPlus<span className="text-coral-500">Ultra</span>
+                ServiPlus<span className="text-cobalt-500">Ultra</span>
               </span>
-              <span className="mt-0.5 text-[10px] font-bold uppercase tracking-[0.16em] text-ink-500">
+              <span className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-ink-400">
                 Solutions S.L.
               </span>
             </span>
@@ -117,10 +104,10 @@ export function Header() {
                   <Link
                     href={item.href}
                     className={cn(
-                      "rounded-full border-2 px-3.5 py-1.5 text-sm font-bold transition",
+                      "rounded-full px-3.5 py-2 text-sm font-medium transition",
                       isActive(item.href)
-                        ? "border-ink-900 bg-ink-900 text-sun-400 shadow-sticker"
-                        : "border-transparent text-ink-700 hover:border-ink-900 hover:bg-sun-400 hover:text-ink-900",
+                        ? "bg-cobalt-50 text-cobalt-700"
+                        : "text-ink-600 hover:bg-ink-50 hover:text-ink-900",
                     )}
                   >
                     {item.label}
@@ -131,13 +118,7 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Button
-              href={siteConfig.contact.phoneTel}
-              variant="primary"
-              size="sm"
-              className="hidden sm:inline-flex"
-              aria-label={`Llamar al ${siteConfig.contact.phone}`}
-            >
+            <Button href={siteConfig.contact.phoneTel} variant="primary" size="sm" className="hidden sm:inline-flex" aria-label={`Llamar al ${siteConfig.contact.phone}`}>
               <Phone className="h-4 w-4" />
               <span className="hidden md:inline">Llamar ahora</span>
               <span className="md:hidden">Llamar</span>
@@ -146,9 +127,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
-              className={cn(
-                "inline-flex h-10 w-10 items-center justify-center rounded-full border-2 border-ink-900 bg-cream-50 text-ink-900 shadow-sticker transition hover:bg-sun-400 lg:hidden",
-              )}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-ink-200 bg-white text-ink-700 transition hover:border-cobalt-300 hover:text-cobalt-600 lg:hidden"
               aria-label={open ? "Cerrar menú" : "Abrir menú"}
               aria-expanded={open}
             >
@@ -161,23 +140,19 @@ export function Header() {
         <div
           className={cn(
             "fixed inset-x-0 top-16 z-30 origin-top transition-all duration-300 lg:hidden",
-            open
-              ? "pointer-events-auto translate-y-0 opacity-100"
-              : "pointer-events-none -translate-y-2 opacity-0",
+            open ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0",
           )}
         >
-          <div className="mx-3 mt-2 overflow-hidden rounded-3xl border-2 border-ink-900 bg-cream-50 shadow-sticker">
-            <nav aria-label="Navegación móvil" className="p-3">
-              <ul className="space-y-2">
+          <div className="mx-3 mt-2 overflow-hidden rounded-2xl border border-ink-200 bg-white shadow-elevate">
+            <nav aria-label="Navegación móvil" className="p-2">
+              <ul className="space-y-1">
                 {navItems.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
                       className={cn(
-                        "flex items-center justify-between rounded-2xl border-2 px-4 py-3 text-base font-bold transition",
-                        isActive(item.href)
-                          ? "border-ink-900 bg-ink-900 text-sun-400"
-                          : "border-ink-900/15 text-ink-800 hover:border-ink-900 hover:bg-sun-400",
+                        "flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition",
+                        isActive(item.href) ? "bg-cobalt-50 text-cobalt-700" : "text-ink-700 hover:bg-ink-50",
                       )}
                     >
                       {item.label}
@@ -185,12 +160,11 @@ export function Header() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-3 grid grid-cols-2 gap-2 p-1">
+              <div className="mt-3 grid grid-cols-2 gap-2 p-2">
                 <Button href={siteConfig.contact.phoneTel} variant="primary" size="md">
-                  <Phone className="h-4 w-4" />
-                  Llamar
+                  <Phone className="h-4 w-4" /> Llamar
                 </Button>
-                <Button href={siteConfig.contact.whatsapp} variant="secondary" size="md">
+                <Button href={siteConfig.contact.whatsapp} variant="ghost" size="md">
                   WhatsApp
                 </Button>
               </div>

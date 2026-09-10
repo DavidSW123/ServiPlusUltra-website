@@ -6,26 +6,25 @@ type Variant = "primary" | "secondary" | "ghost" | "outline" | "dark" | "coral";
 type Size = "sm" | "md" | "lg";
 
 const baseClasses =
-  "inline-flex items-center justify-center gap-2 rounded-full font-bold transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed select-none whitespace-nowrap border-2 border-ink-900";
+  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed select-none whitespace-nowrap";
 
 const variants: Record<Variant, string> = {
-  // Yellow chunky — CTA principal (Bold & Friendly)
+  // Cobalto sólido con resplandor — CTA principal
   primary:
-    "bg-sun-400 text-ink-900 shadow-sticker hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_rgba(26,26,26,1)] active:translate-y-0 active:shadow-[2px_2px_0_0_rgba(26,26,26,1)]",
-  // Cobalt — secondary CTA
-  secondary:
-    "bg-brand-600 text-white shadow-sticker hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_rgba(26,26,26,1)] active:translate-y-0 active:shadow-[2px_2px_0_0_rgba(26,26,26,1)]",
-  // Coral — accent
+    "bg-cobalt-500 text-white shadow-glow-cobalt hover:bg-cobalt-600 hover:shadow-elevate active:scale-[0.98]",
+  // Oscuro
+  secondary: "bg-ink-900 text-white hover:bg-ink-800 active:scale-[0.98]",
+  // Cobre — acento
   coral:
-    "bg-coral-500 text-white shadow-sticker hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_rgba(26,26,26,1)] active:translate-y-0 active:shadow-[2px_2px_0_0_rgba(26,26,26,1)]",
-  // Ghost — fondo claro/cream
+    "bg-copper-500 text-white shadow-glow-copper hover:bg-copper-600 active:scale-[0.98]",
+  // Claro con borde fino
   ghost:
-    "bg-cream-50 text-ink-900 hover:bg-cream-100 shadow-sticker hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_rgba(26,26,26,1)]",
-  // Outline para sobre fondos oscuros
+    "bg-white text-ink-900 border border-ink-200 shadow-soft hover:border-cobalt-300 hover:bg-ink-50",
+  // Sobre fondos oscuros
   outline:
-    "bg-transparent text-ink-900 border-ink-900 hover:bg-ink-900 hover:text-cream-100",
-  // Dark
-  dark: "bg-ink-900 text-cream-50 hover:bg-ink-800 shadow-sticker hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_rgba(255,212,59,1)]",
+    "bg-white/10 text-white border border-white/25 backdrop-blur hover:bg-white/20 hover:border-white/40",
+  // Blanco sobre oscuro (CTA en secciones oscuras)
+  dark: "bg-white text-cobalt-700 hover:bg-cobalt-50 active:scale-[0.98]",
 };
 
 const sizes: Record<Size, string> = {
@@ -42,15 +41,9 @@ type CommonProps = {
 };
 
 type ButtonAsButton = CommonProps &
-  Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof CommonProps> & {
-    href?: undefined;
-  };
-
+  Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof CommonProps> & { href?: undefined };
 type ButtonAsLink = CommonProps &
-  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof CommonProps> & {
-    href: string;
-  };
-
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof CommonProps> & { href: string };
 type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
@@ -59,39 +52,25 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
 
     if ("href" in props && props.href) {
       const { href, ...rest } = props;
-      const isExternal = /^https?:\/\//.test(href) || href.startsWith("tel:") || href.startsWith("mailto:");
+      const isExternal =
+        /^https?:\/\//.test(href) || href.startsWith("tel:") || href.startsWith("mailto:");
 
       if (isExternal) {
         return (
-          <a
-            ref={ref as React.Ref<HTMLAnchorElement>}
-            href={href}
-            className={classes}
-            {...(rest as AnchorHTMLAttributes<HTMLAnchorElement>)}
-          >
+          <a ref={ref as React.Ref<HTMLAnchorElement>} href={href} className={classes} {...(rest as AnchorHTMLAttributes<HTMLAnchorElement>)}>
             {children}
           </a>
         );
       }
-
       return (
-        <Link
-          ref={ref as React.Ref<HTMLAnchorElement>}
-          href={href}
-          className={classes}
-          {...(rest as AnchorHTMLAttributes<HTMLAnchorElement>)}
-        >
+        <Link ref={ref as React.Ref<HTMLAnchorElement>} href={href} className={classes} {...(rest as AnchorHTMLAttributes<HTMLAnchorElement>)}>
           {children}
         </Link>
       );
     }
 
     return (
-      <button
-        ref={ref as React.Ref<HTMLButtonElement>}
-        className={classes}
-        {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}
-      >
+      <button ref={ref as React.Ref<HTMLButtonElement>} className={classes} {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}>
         {children}
       </button>
     );

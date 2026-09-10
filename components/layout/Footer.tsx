@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Clock, Mail, MapPin, Phone, ShieldCheck, Star } from "lucide-react";
 import Image from "next/image";
+import { Clock, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { CookiePreferencesButton } from "@/components/legal/CookiePreferencesButton";
 import { siteConfig } from "@/lib/site-config";
@@ -10,199 +10,118 @@ const servicesNav = [
   { href: "/climatizacion", label: "Climatización" },
   { href: "/reparaciones-manitas", label: "Reparaciones y manitas" },
 ];
-
 const citiesNav = [
   { href: "/madrid", label: "Servicio en Madrid" },
   { href: "/barcelona", label: "Servicio en Barcelona" },
 ];
-
 const legalNav = [
   { href: "/aviso-legal", label: "Aviso legal" },
   { href: "/privacidad", label: "Política de privacidad" },
   { href: "/cookies", label: "Política de cookies" },
 ];
 
+function Column({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan-400">{title}</h3>
+      <ul className="mt-4 space-y-2.5 text-sm">{children}</ul>
+    </div>
+  );
+}
+
 export function Footer() {
   return (
-    <footer className="relative isolate overflow-hidden border-t-2 border-ink-900 bg-brand-600 text-cream-50">
-      <div className="absolute inset-0 -z-10 bg-dots-soft bg-dots opacity-25" aria-hidden />
-      <div
-        className="absolute -right-32 -top-32 -z-10 h-80 w-80 rounded-full bg-sun-400/30 blur-3xl"
-        aria-hidden
-      />
-      <div
-        className="absolute -bottom-32 -left-20 -z-10 h-72 w-72 rounded-full bg-coral-500/30 blur-3xl"
-        aria-hidden
-      />
+    <footer className="relative isolate overflow-hidden bg-cobalt-950 text-cobalt-100/80">
+      <div className="absolute inset-0 -z-10 bg-grid-tech bg-grid opacity-30" aria-hidden />
+      <div className="absolute -right-32 -top-32 -z-10 h-80 w-80 rounded-full bg-cobalt-500/20 blur-3xl" aria-hidden />
+      <div className="absolute -bottom-32 -left-24 -z-10 h-72 w-72 rounded-full bg-copper-500/10 blur-3xl" aria-hidden />
 
       <Container className="py-14 sm:py-20">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <div className="flex justify-center">
-              <Image
-                src="/logo-dark.png"
-                alt="ServiPlusUltra Solutions S.L."
-                width={875}
-                height={404}
-                className="h-20 w-auto sm:h-28"
-              />
-            </div>
-            <p className="mt-5 max-w-md text-base text-cream-100/90">
-              Multiservicios premium en Madrid y Barcelona. Electricidad, climatización y
-              reparaciones del hogar con técnicos de oficio, presupuesto sin sorpresas y trabajo
-              que dura.
+            <Image src="/logo-dark.png" alt="ServiPlusUltra Solutions S.L." width={875} height={404} className="h-20 w-auto" />
+            <p className="mt-5 max-w-md text-sm text-cobalt-100/70">
+              Multiservicios técnicos en Madrid y Barcelona. Electricidad, climatización, reformas y
+              reparaciones con técnicos de oficio, presupuesto sin sorpresas y trabajo que dura.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <a
-                href={siteConfig.contact.phoneTel}
-                className="inline-flex items-center gap-2 rounded-full border-2 border-ink-900 bg-sun-400 px-5 py-2.5 text-sm font-bold text-ink-900 shadow-sticker transition hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_rgba(26,26,26,1)]"
-              >
+              <a href={siteConfig.contact.phoneTel} className="inline-flex items-center gap-2 rounded-full bg-cobalt-500 px-5 py-2.5 text-sm font-semibold text-white shadow-glow-cobalt transition hover:bg-cobalt-600">
                 <Phone className="h-4 w-4" />
                 {siteConfig.contact.phone}
               </a>
-              <a
-                href={siteConfig.contact.whatsapp}
-                className="inline-flex items-center gap-2 rounded-full border-2 border-ink-900 bg-coral-500 px-5 py-2.5 text-sm font-bold text-white shadow-sticker transition hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_rgba(26,26,26,1)]"
-              >
+              <a href={siteConfig.contact.whatsapp} className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/5">
                 Enviar WhatsApp
               </a>
             </div>
 
             <ul className="mt-8 space-y-3 text-sm">
               <li className="flex items-start gap-3">
-                <Mail className="mt-0.5 h-4 w-4 text-sun-400" />
-                <a href={siteConfig.contact.emailLink} className="text-cream-100/90 hover:text-sun-400">
-                  {siteConfig.contact.email}
-                </a>
+                <Mail className="mt-0.5 h-4 w-4 text-cyan-400" />
+                <a href={siteConfig.contact.emailLink} className="hover:text-white">{siteConfig.contact.email}</a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 text-sun-400" />
-                <span className="text-cream-100/90">Madrid · Barcelona y áreas metropolitanas</span>
+                <MapPin className="mt-0.5 h-4 w-4 text-cyan-400" />
+                <span>Madrid · Barcelona y áreas metropolitanas</span>
               </li>
               <li className="flex items-start gap-3">
-                <Clock className="mt-0.5 h-4 w-4 text-sun-400" />
-                <span className="text-cream-100/90">
+                <Clock className="mt-0.5 h-4 w-4 text-cyan-400" />
+                <span>
                   {siteConfig.hours.weekdays}
                   <br />
-                  <span className="text-cream-100/60">{siteConfig.hours.weekend}</span>
+                  <span className="text-cobalt-100/50">{siteConfig.hours.weekend}</span>
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <ShieldCheck className="mt-0.5 h-4 w-4 text-mint-300" />
-                <span className="text-cream-100/90">{siteConfig.legal.company}</span>
+                <ShieldCheck className="mt-0.5 h-4 w-4 text-copper-400" />
+                <span>{siteConfig.legal.company} · CIF {siteConfig.legal.cif}</span>
               </li>
             </ul>
           </div>
 
           <div className="lg:col-span-7">
             <div className="grid gap-8 sm:grid-cols-3">
-              <div>
-                <h3 className="inline-flex items-center gap-1.5 rounded-full border-2 border-ink-900 bg-sun-400 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-ink-900 shadow-sticker">
-                  <Star className="h-3 w-3 fill-current" />
-                  Servicios
-                </h3>
-                <ul className="mt-5 space-y-2.5 text-sm">
-                  {servicesNav.map((item) => (
-                    <li key={item.href}>
-                      <Link
-                        href={item.href}
-                        className="font-semibold text-cream-100/85 transition hover:text-sun-400"
-                      >
-                        → {item.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="inline-flex items-center gap-1.5 rounded-full border-2 border-ink-900 bg-coral-500 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-white shadow-sticker">
-                  <Star className="h-3 w-3 fill-current" />
-                  Cobertura
-                </h3>
-                <ul className="mt-5 space-y-2.5 text-sm">
-                  {citiesNav.map((item) => (
-                    <li key={item.href}>
-                      <Link
-                        href={item.href}
-                        className="font-semibold text-cream-100/85 transition hover:text-sun-400"
-                      >
-                        → {item.label}
-                      </Link>
-                    </li>
-                  ))}
-                  <li>
-                    <Link
-                      href="/contacto"
-                      className="font-semibold text-cream-100/85 transition hover:text-sun-400"
-                    >
-                      → Pedir presupuesto
-                    </Link>
+              <Column title="Servicios">
+                {servicesNav.map((i) => (
+                  <li key={i.href}>
+                    <Link href={i.href} className="text-cobalt-100/75 transition hover:text-white">{i.label}</Link>
                   </li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="inline-flex items-center gap-1.5 rounded-full border-2 border-ink-900 bg-mint-100 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-ink-900 shadow-sticker">
-                  <Star className="h-3 w-3 fill-current" />
-                  Empresa
-                </h3>
-                <ul className="mt-5 space-y-2.5 text-sm">
-                  <li>
-                    <Link
-                      href="/contacto"
-                      className="font-semibold text-cream-100/85 transition hover:text-sun-400"
-                    >
-                      → Contacto
-                    </Link>
+                ))}
+              </Column>
+              <Column title="Cobertura">
+                {citiesNav.map((i) => (
+                  <li key={i.href}>
+                    <Link href={i.href} className="text-cobalt-100/75 transition hover:text-white">{i.label}</Link>
                   </li>
-                  {legalNav.map((item) => (
-                    <li key={item.href}>
-                      <Link
-                        href={item.href}
-                        className="font-semibold text-cream-100/85 transition hover:text-sun-400"
-                      >
-                        → {item.label}
-                      </Link>
-                    </li>
-                  ))}
-                  <li>
-                    <CookiePreferencesButton className="font-semibold text-cream-100/85 transition hover:text-sun-400" />
+                ))}
+                <li><Link href="/contacto" className="text-cobalt-100/75 transition hover:text-white">Pedir presupuesto</Link></li>
+              </Column>
+              <Column title="Empresa">
+                <li><Link href="/contacto" className="text-cobalt-100/75 transition hover:text-white">Contacto</Link></li>
+                {legalNav.map((i) => (
+                  <li key={i.href}>
+                    <Link href={i.href} className="text-cobalt-100/75 transition hover:text-white">{i.label}</Link>
                   </li>
-                </ul>
-              </div>
+                ))}
+                <li><CookiePreferencesButton className="text-cobalt-100/75 transition hover:text-white" /></li>
+              </Column>
             </div>
 
-            <div className="mt-10 rounded-3xl border-2 border-ink-900 bg-cream-50 p-7 text-ink-900 shadow-sticker">
-              <h3 className="font-display text-2xl font-bold">
-                ¿Una avería o necesitas{" "}
-                <span className="relative inline-block text-coral-500">
-                  <span className="relative z-10">presupuesto</span>
-                  <span className="absolute inset-x-0 bottom-1 -z-0 h-3 bg-sun-400" aria-hidden />
-                </span>
-                ?
-              </h3>
-              <p className="mt-3 text-sm text-ink-700">
+            <div className="mt-10 rounded-2xl border border-white/10 bg-white/[0.05] p-6 backdrop-blur">
+              <h3 className="font-display text-lg font-semibold text-white">¿Una avería o necesitas presupuesto?</h3>
+              <p className="mt-1.5 text-sm text-cobalt-100/70">
                 Cuéntanos lo que ocurre y te respondemos en menos de 24 horas en horario laboral.
               </p>
-              <Link
-                href="/contacto"
-                className="mt-5 inline-flex items-center gap-2 rounded-full border-2 border-ink-900 bg-sun-400 px-5 py-2.5 text-sm font-bold text-ink-900 shadow-sticker transition hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_rgba(26,26,26,1)]"
-              >
+              <Link href="/contacto" className="mt-4 inline-flex items-center gap-2 rounded-full bg-copper-500 px-5 py-2.5 text-sm font-semibold text-white shadow-glow-copper transition hover:bg-copper-600">
                 Pedir presupuesto sin compromiso →
               </Link>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t-2 border-cream-50/15 pt-6 text-xs text-cream-100/60 sm:flex-row sm:items-center">
-          <p>
-            © {new Date().getFullYear()} {siteConfig.legal.company}. Todos los derechos reservados.
-          </p>
-          <p className="font-semibold">
-            Diseño y desarrollo by <span className="text-sun-400">SW Labs</span>
-          </p>
+        <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 text-xs text-cobalt-100/50 sm:flex-row sm:items-center">
+          <p>© {new Date().getFullYear()} {siteConfig.legal.company}. Todos los derechos reservados.</p>
+          <p className="font-medium">Diseño y desarrollo by <span className="text-cyan-400">SW Labs</span></p>
         </div>
       </Container>
     </footer>

@@ -10,203 +10,154 @@ const config: Config = {
   theme: {
     container: {
       center: true,
-      padding: {
-        DEFAULT: "1rem",
-        sm: "1.5rem",
-        lg: "2rem",
-      },
-      screens: {
-        "2xl": "1280px",
-      },
+      padding: { DEFAULT: "1rem", sm: "1.5rem", lg: "2rem" },
+      screens: { "2xl": "1280px" },
     },
     extend: {
       colors: {
         // ============================================
-        // ServiPlusUltra — "Bold & Friendly"
-        // Holaluz / Oatly / Klarna inspired
+        // ServiPlusUltra — "Tech Cobalto"
+        // Cobalto + cobre, geometría limpia, premium
         // ============================================
-
-        // Cream warm — fondo principal cálido (papel)
-        cream: {
-          50: "#FFFDF8",
-          100: "#FFF8EE", // base background
-          200: "#FBF1DC",
-          300: "#F5E6C2",
+        cobalt: {
+          50: "#EEF3FF",
+          100: "#DEE7FF",
+          200: "#C2D1FF",
+          300: "#98B0FF",
+          400: "#6C87FB",
+          500: "#3B5EF0", // ⭐ primario
+          600: "#2A46D6",
+          700: "#2138AD",
+          800: "#1D2F87",
+          900: "#182661",
+          950: "#0C1440", // navy profundo (fondos hero)
         },
-
-        // Cobalt blue vibrante — primary brand
+        copper: {
+          50: "#FBF4EE",
+          100: "#F6E4D4",
+          200: "#EDC7A8",
+          300: "#E2A878",
+          400: "#D68B4E",
+          500: "#C77237", // ⭐ acento cobre
+          600: "#A85A28",
+          700: "#864620",
+          800: "#6B3A1E",
+        },
+        cyan: {
+          // resplandor "tech" muy puntual
+          400: "#38E1FF",
+          500: "#12C6EA",
+        },
+        ink: {
+          // slate cool para texto y neutros
+          50: "#F7F8FB",
+          100: "#EEF1F6",
+          200: "#DEE3EC",
+          300: "#C3CBD9",
+          400: "#94A0B4",
+          500: "#657189",
+          600: "#48546B",
+          700: "#333D50",
+          800: "#1F2736",
+          900: "#111725",
+          950: "#080C15",
+        },
+        // Aliases de compatibilidad (código aún no migrado)
         brand: {
           50: "#EEF3FF",
-          100: "#DCE5FF",
-          200: "#B6C6FF",
-          300: "#8BA4FF",
-          400: "#5C7DFB",
-          500: "#3D5DF7",
-          600: "#2D52F5", // ⭐ cobalt principal
-          700: "#1F3FD6",
-          800: "#1A33A8",
-          900: "#162780",
-          950: "#0C1748",
+          100: "#DEE7FF",
+          200: "#C2D1FF",
+          300: "#98B0FF",
+          400: "#6C87FB",
+          500: "#3B5EF0",
+          600: "#2A46D6",
+          700: "#2138AD",
+          800: "#1D2F87",
+          900: "#182661",
+          950: "#0C1440",
         },
-
-        // Mustard / sunshine yellow — accent alegre
-        sun: {
-          50: "#FFFBEB",
-          100: "#FFF4C7",
-          200: "#FFE88A",
-          300: "#FFDA52",
-          400: "#FFD43B", // ⭐ amarillo principal
-          500: "#F5BC10",
-          600: "#D49C04",
-          700: "#A77707",
-          800: "#7C5912",
-        },
-
-        // Coral — pop accent / stickers
-        coral: {
-          50: "#FFF1ED",
-          100: "#FFE0D6",
-          200: "#FFBDA8",
-          300: "#FF9876",
-          400: "#FF7B53",
-          500: "#FF6B47", // ⭐ coral principal
-          600: "#EF4D24",
-          700: "#C9381B",
-          800: "#A22F1A",
-        },
-
-        // Mint — soft highlight
-        mint: {
-          50: "#EEFBF3",
-          100: "#D4F5E1", // ⭐ mint principal (badge bg)
-          200: "#A8EAC2",
-          300: "#74D89E",
-          400: "#46BF7B",
-          500: "#27A65F",
-          600: "#1B854B",
-        },
-
-        // Ink — neutros para texto (charcoal NO black puro)
-        ink: {
-          50: "#FAFAF7",
-          100: "#F2F1ED",
-          200: "#E2E0D9",
-          300: "#C9C6BB",
-          400: "#9D998E",
-          500: "#6E6A60",
-          600: "#4D4A43",
-          700: "#36342F",
-          800: "#22211D",
-          900: "#1A1A1A", // ⭐ texto principal (charcoal)
-          950: "#0E0E0E",
-        },
-
-        // Aliases para mantener compat con código existente que se va sustituyendo
         accent: {
-          50: "#FFF1ED",
-          100: "#FFE0D6",
-          200: "#FFBDA8",
-          300: "#FF9876",
-          400: "#FF7B53",
-          500: "#FF6B47",
-          600: "#EF4D24",
-          700: "#C9381B",
+          50: "#FBF4EE",
+          100: "#F6E4D4",
+          200: "#EDC7A8",
+          300: "#E2A878",
+          400: "#D68B4E",
+          500: "#C77237",
+          600: "#A85A28",
+          700: "#864620",
         },
-        spark: {
-          50: "#FFFBEB",
-          100: "#FFF4C7",
-          200: "#FFE88A",
-          300: "#FFDA52",
-          400: "#FFD43B",
-          500: "#F5BC10",
-          600: "#D49C04",
-          700: "#A77707",
-        },
-        gold: {
-          400: "#FFD43B",
-          500: "#F5BC10",
-          600: "#D49C04",
-        },
-        success: {
-          400: "#46BF7B",
-          500: "#27A65F",
-          600: "#1B854B",
-        },
-        night: {
-          900: "#162780",
-          950: "#0C1748",
-        },
+        sun: { 400: "#D68B4E", 500: "#C77237", 600: "#A85A28", 700: "#864620", 100: "#F6E4D4" },
+        coral: { 100: "#F6E4D4", 500: "#C77237", 600: "#A85A28", 700: "#864620", 800: "#6B3A1E" },
+        mint: { 100: "#DEE7FF", 200: "#C2D1FF", 300: "#98B0FF", 600: "#2138AD" },
+        cream: { 50: "#FFFFFF", 100: "#F7F8FB", 200: "#EEF1F6", 300: "#DEE3EC" },
+        night: { 900: "#111725", 950: "#080C15" },
+        success: { 400: "#34D399", 500: "#10B981", 600: "#059669" },
+        gold: { 400: "#D68B4E", 500: "#C77237", 600: "#A85A28" },
+        spark: { 400: "#38E1FF", 500: "#12C6EA" },
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-bricolage)", "var(--font-inter)", "sans-serif"],
+        display: ["var(--font-display)", "var(--font-inter)", "sans-serif"],
       },
       fontSize: {
         "display-xl": [
-          "clamp(3rem, 6vw + 1rem, 6rem)",
-          { lineHeight: "0.95", letterSpacing: "-0.035em", fontWeight: "700" },
+          "clamp(2.75rem, 5vw + 1rem, 5rem)",
+          { lineHeight: "1.02", letterSpacing: "-0.03em", fontWeight: "700" },
         ],
         "display-lg": [
-          "clamp(2.25rem, 4vw + 1rem, 4.25rem)",
-          { lineHeight: "1.0", letterSpacing: "-0.03em", fontWeight: "700" },
+          "clamp(2.25rem, 3.5vw + 1rem, 3.75rem)",
+          { lineHeight: "1.05", letterSpacing: "-0.025em", fontWeight: "700" },
         ],
         "display-md": [
-          "clamp(1.75rem, 2.5vw + 1rem, 3rem)",
-          { lineHeight: "1.05", letterSpacing: "-0.025em", fontWeight: "700" },
+          "clamp(1.6rem, 2vw + 1rem, 2.5rem)",
+          { lineHeight: "1.12", letterSpacing: "-0.02em", fontWeight: "600" },
         ],
       },
       backgroundImage: {
-        "stripes-cobalt":
-          "repeating-linear-gradient(-45deg, #2D52F5, #2D52F5 14px, #1F3FD6 14px, #1F3FD6 28px)",
-        "stripes-sun":
-          "repeating-linear-gradient(-45deg, #FFD43B, #FFD43B 14px, #F5BC10 14px, #F5BC10 28px)",
-        "dots-soft":
-          "radial-gradient(circle at 1px 1px, rgba(26,26,26,0.10) 1px, transparent 0)",
-        "grid-cream":
-          "linear-gradient(to right, rgba(26,26,26,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(26,26,26,0.04) 1px, transparent 1px)",
+        "cobalt-radial":
+          "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(59,94,240,0.55), transparent 60%)",
+        "cobalt-gradient":
+          "linear-gradient(160deg, #0C1440 0%, #182661 45%, #1D2F87 100%)",
+        "copper-line": "linear-gradient(90deg, transparent, #C77237, transparent)",
+        "cyan-line": "linear-gradient(90deg, transparent, #38E1FF, transparent)",
+        "grid-tech":
+          "linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px)",
+        "grid-light":
+          "linear-gradient(to right, rgba(17,23,37,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(17,23,37,0.05) 1px, transparent 1px)",
+        "dots-tech":
+          "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.12) 1px, transparent 0)",
       },
-      backgroundSize: {
-        grid: "32px 32px",
-        dots: "20px 20px",
-      },
+      backgroundSize: { grid: "44px 44px", dots: "22px 22px" },
       boxShadow: {
-        soft: "0 6px 20px -8px rgba(26,26,26,0.12)",
-        card: "0 10px 30px -12px rgba(26,26,26,0.18)",
-        "sticker": "4px 4px 0 0 rgba(26,26,26,1)",
-        "sticker-cobalt": "4px 4px 0 0 rgba(45,82,245,1)",
-        "sticker-coral": "4px 4px 0 0 rgba(255,107,71,1)",
-        "sticker-sun": "4px 4px 0 0 rgba(255,212,59,1)",
-        "premium": "0 14px 40px -16px rgba(45,82,245,0.35)",
-        // Compat
-        "glow-accent": "0 0 0 1px rgba(255,107,71,0.4), 0 8px 32px -8px rgba(255,107,71,0.5)",
-        "glow-cyan": "0 0 0 1px rgba(45,82,245,0.4), 0 8px 32px -8px rgba(45,82,245,0.5)",
+        soft: "0 4px 20px -8px rgba(17,23,37,0.10)",
+        card: "0 12px 34px -14px rgba(17,23,37,0.18)",
+        elevate: "0 24px 60px -24px rgba(17,23,37,0.30)",
+        "glow-cobalt": "0 12px 40px -10px rgba(59,94,240,0.55)",
+        "glow-copper": "0 12px 40px -12px rgba(199,114,55,0.5)",
+        "ring-cobalt": "0 0 0 1px rgba(59,94,240,0.35)",
+        // compat
+        sticker: "0 12px 34px -14px rgba(17,23,37,0.18)",
       },
-      borderRadius: {
-        "4xl": "2rem",
-        "5xl": "2.5rem",
-      },
+      borderRadius: { "4xl": "2rem", "5xl": "2.5rem" },
       animation: {
-        "fade-up": "fadeUp 0.6s ease-out",
-        "fade-in": "fadeIn 0.4s ease-out",
-        "marquee": "marquee 40s linear infinite",
-        "wiggle": "wiggle 0.4s ease-in-out",
+        "fade-up": "fadeUp 0.6s ease-out both",
+        "fade-in": "fadeIn 0.5s ease-out both",
+        marquee: "marquee 38s linear infinite",
+        float: "float 6s ease-in-out infinite",
       },
       keyframes: {
         fadeUp: {
-          "0%": { opacity: "0", transform: "translateY(12px)" },
+          "0%": { opacity: "0", transform: "translateY(14px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
-        fadeIn: {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
-        },
+        fadeIn: { "0%": { opacity: "0" }, "100%": { opacity: "1" } },
         marquee: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
-        wiggle: {
-          "0%, 100%": { transform: "rotate(-2deg)" },
-          "50%": { transform: "rotate(2deg)" },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
         },
       },
     },

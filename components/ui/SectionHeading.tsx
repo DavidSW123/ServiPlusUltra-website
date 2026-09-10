@@ -21,42 +21,29 @@ export function SectionHeading({
   className,
   as: Heading = "h2",
 }: Props) {
-  const isDark = tone === "dark";
+  const dark = tone === "dark";
   return (
-    <div
-      className={cn(
-        "max-w-3xl",
-        align === "center" && "mx-auto text-center",
-        className,
-      )}
-    >
+    <div className={cn("max-w-3xl", align === "center" && "mx-auto text-center", className)}>
       {eyebrow && (
         <div className={cn(align === "center" && "flex justify-center")}>
-          <Eyebrow tone={tone === "light" ? "coral" : tone} sticker>
-            {eyebrow}
-          </Eyebrow>
+          <Eyebrow tone={tone}>{eyebrow}</Eyebrow>
         </div>
       )}
       <Heading
         className={cn(
-          "mt-6 text-balance font-display tracking-tight",
+          "mt-5 text-balance font-display tracking-tight",
           Heading === "h1"
             ? "text-display-xl"
             : Heading === "h2"
               ? "text-display-md sm:text-display-lg"
-              : "text-2xl sm:text-3xl font-bold",
-          isDark ? "text-cream-50" : "text-ink-900",
+              : "text-2xl font-semibold sm:text-3xl",
+          dark ? "text-white" : "text-ink-900",
         )}
       >
         {title}
       </Heading>
       {subtitle && (
-        <p
-          className={cn(
-            "mt-5 text-pretty text-base sm:text-lg",
-            isDark ? "text-cream-100/85" : "text-ink-700",
-          )}
-        >
+        <p className={cn("mt-5 text-pretty text-base sm:text-lg", dark ? "text-cobalt-100/80" : "text-ink-500")}>
           {subtitle}
         </p>
       )}
