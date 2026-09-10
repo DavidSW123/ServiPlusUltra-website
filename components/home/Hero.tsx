@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight, Phone, ShieldCheck, Wrench, Zap } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -23,10 +24,11 @@ const trust = [
 export function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-cobalt-950 text-white">
-      {/* Fondo tech */}
-      <div className="absolute inset-0 -z-10 bg-cobalt-gradient" aria-hidden />
-      <div className="absolute inset-0 -z-10 bg-grid-tech bg-grid opacity-40" aria-hidden />
-      <div className="absolute inset-0 -z-10 bg-cobalt-radial opacity-80" aria-hidden />
+      {/* Fondo: foto velada + tech */}
+      <Image src="/img/hero.jpg" alt="" fill priority sizes="100vw" className="-z-20 object-cover" aria-hidden />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cobalt-950/96 via-cobalt-950/90 to-cobalt-900/75" aria-hidden />
+      <div className="absolute inset-0 -z-10 bg-grid-tech bg-grid opacity-30" aria-hidden />
+      <div className="absolute inset-0 -z-10 bg-cobalt-radial opacity-70" aria-hidden />
       <div className="absolute -right-40 -top-24 -z-10 h-[520px] w-[520px] rounded-full bg-cobalt-500/25 blur-3xl" aria-hidden />
       <div className="absolute -bottom-40 -left-32 -z-10 h-[440px] w-[440px] rounded-full bg-copper-500/15 blur-3xl" aria-hidden />
 

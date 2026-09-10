@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Hammer, Snowflake, Zap } from "lucide-react";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -12,6 +13,7 @@ type ServiceCard = {
   bullets: string[];
   icon: typeof Zap;
   badge: string;
+  image: string;
 };
 
 const services: ServiceCard[] = [
@@ -25,6 +27,7 @@ const services: ServiceCard[] = [
     bullets: ["Urgencias sin esperas", "Reforma completa de instalación", "Cambio de cuadro antiguo", "Mantenimiento empresas"],
     icon: Zap,
     badge: "Atención urgente",
+    image: "/img/electricidad.jpg",
   },
   {
     slug: "/climatizacion",
@@ -36,6 +39,7 @@ const services: ServiceCard[] = [
     bullets: ["Instalación de splits", "Reforma completa de clima", "Sistemas de calefacción", "Mantenimiento y reparaciones"],
     icon: Snowflake,
     badge: "Garantía 12 meses*",
+    image: "/img/climatizacion.jpg",
   },
   {
     slug: "/reparaciones-manitas",
@@ -47,6 +51,7 @@ const services: ServiceCard[] = [
     bullets: ["Fontanería (tuberías, fugas)", "Carpintería (puertas, armarios)", "Reformas de todos los tamaños", "Albañilería, pintura, acabados"],
     icon: Hammer,
     badge: "Equipo propio",
+    image: "/img/reformas.jpg",
   },
 ];
 
@@ -71,40 +76,47 @@ export function ServicesGrid() {
           <Link
             key={service.slug}
             href={service.slug}
-            className="group relative flex flex-col overflow-hidden rounded-2xl border border-ink-200 bg-white p-7 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-cobalt-200 hover:shadow-card"
+            className="group flex flex-col overflow-hidden rounded-2xl border border-ink-200 bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:border-cobalt-200 hover:shadow-card"
           >
-            <span className="pointer-events-none absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-cobalt-500 to-cyan-400 transition-transform duration-300 group-hover:scale-x-100" aria-hidden />
-
-            <div className="flex items-start justify-between">
-              <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-cobalt-50 text-cobalt-600 ring-1 ring-cobalt-100 transition group-hover:bg-cobalt-500 group-hover:text-white">
-                <service.icon className="h-7 w-7" strokeWidth={2} />
+            <div className="relative aspect-[16/10] overflow-hidden">
+              <Image
+                src={service.image}
+                alt={`ServiPlusUltra — ${service.title} en Madrid y Barcelona`}
+                fill
+                sizes="(max-width: 1024px) 100vw, 33vw"
+                className="object-cover transition duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-cobalt-950/80 via-cobalt-950/20 to-transparent" aria-hidden />
+              <span className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/95 text-cobalt-600 shadow-soft backdrop-blur">
+                <service.icon className="h-6 w-6" strokeWidth={2} />
               </span>
-              <span className="font-display text-5xl font-bold leading-none text-ink-100 transition group-hover:text-copper-400">
-                {service.number}
-              </span>
+              <span className="absolute right-4 top-3 font-display text-4xl font-bold text-white/90">{service.number}</span>
+              <div className="absolute inset-x-4 bottom-3 flex items-end justify-between">
+                <h3 className="font-display text-2xl font-semibold text-white">{service.title}</h3>
+                <span className="rounded-full bg-copper-500 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white">
+                  {service.badge}
+                </span>
+              </div>
             </div>
 
-            <span className="mt-6 inline-flex w-fit items-center gap-1.5 rounded-full bg-copper-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-copper-700">
-              {service.badge}
-            </span>
+            <div className="flex flex-1 flex-col p-6">
+              <p className="text-sm font-medium text-cobalt-600">{service.tagline}</p>
+              <p className="mt-2 text-sm text-ink-500">{service.description}</p>
 
-            <h3 className="mt-3 font-display text-2xl font-semibold text-ink-900">{service.title}</h3>
-            <p className="mt-1 text-sm font-medium text-cobalt-600">{service.tagline}</p>
-            <p className="mt-3 text-sm text-ink-500">{service.description}</p>
+              <ul className="mt-5 space-y-2 border-t border-ink-100 pt-5 text-sm">
+                {service.bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-2 text-ink-600">
+                    <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-cobalt-400" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
 
-            <ul className="mt-5 space-y-2 border-t border-ink-100 pt-5 text-sm">
-              {service.bullets.map((b) => (
-                <li key={b} className="flex items-start gap-2 text-ink-600">
-                  <span className="mt-1.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-cobalt-400" />
-                  {b}
-                </li>
-              ))}
-            </ul>
-
-            <span className="mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-cobalt-600 transition group-hover:gap-2.5">
-              Ver detalle del servicio
-              <ArrowUpRight className="h-4 w-4" />
-            </span>
+              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-cobalt-600 transition group-hover:gap-2.5">
+                Ver detalle del servicio
+                <ArrowUpRight className="h-4 w-4" />
+              </span>
+            </div>
           </Link>
         ))}
       </div>
