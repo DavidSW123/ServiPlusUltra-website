@@ -26,16 +26,16 @@ export function Logo({ className, variant = "full", tone = "light", href = "/" }
           isDark ? "text-cream-50" : "text-ink-900",
         )}
       >
-        ServiPlus<span className="text-coral-500">Ultra</span>
+        ServiPlus<span className="text-copper-500">Ultra</span>
       </span>
       {variant === "full" && (
         <span
           className={cn(
-            "mt-0.5 text-[10px] font-bold uppercase tracking-[0.18em]",
-            isDark ? "text-sun-400" : "text-ink-500",
+            "mt-0.5 text-[10px] font-semibold uppercase tracking-[0.18em]",
+            isDark ? "text-cobalt-100" : "text-ink-500",
           )}
         >
-          ★ Multiservicios
+          Multiservicios
         </span>
       )}
     </span>
@@ -44,15 +44,15 @@ export function Logo({ className, variant = "full", tone = "light", href = "/" }
   const lionMark = (
     <span
       className={cn(
-        "relative flex h-10 w-10 items-center justify-center rounded-xl border-2 border-ink-900 shadow-sticker sm:h-11 sm:w-11",
-        isDark ? "bg-sun-400" : "bg-brand-600",
+        "relative flex h-10 w-10 items-center justify-center rounded-xl shadow-glow-cobalt sm:h-11 sm:w-11",
+        isDark ? "bg-white/10 ring-1 ring-white/15 backdrop-blur" : "bg-cobalt-500",
       )}
       aria-hidden="true"
     >
       {/* Placeholder SVG: león geométrico estilizado. */}
       <svg
         viewBox="0 0 40 40"
-        className={cn("h-7 w-7", isDark ? "text-ink-900" : "text-sun-400")}
+        className={cn("h-7 w-7", isDark ? "text-cyan-400" : "text-white")}
         fill="none"
         stroke="currentColor"
         strokeWidth="2"

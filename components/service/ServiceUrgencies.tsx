@@ -23,14 +23,14 @@ export function ServiceUrgencies({
     <Section tone="cobalt" pad="lg" decorative>
       <div className="grid gap-10 lg:grid-cols-12 lg:items-center">
         <div className="lg:col-span-7">
-          <Eyebrow tone="coral" sticker>
-            <ShieldAlert className="h-3.5 w-3.5" />
+          <Eyebrow tone="dark">
+            <ShieldAlert className="h-3.5 w-3.5 text-cyan-400" />
             Urgencias
           </Eyebrow>
-          <h2 className="mt-6 font-display text-display-md text-cream-50 sm:text-display-lg">
+          <h2 className="mt-6 font-display text-display-md text-white sm:text-display-lg">
             {title}
           </h2>
-          <p className="mt-5 max-w-2xl text-pretty text-base text-cream-100/90 sm:text-lg">
+          <p className="mt-5 max-w-2xl text-pretty text-base text-cobalt-100/80 sm:text-lg">
             {description}
           </p>
 
@@ -38,9 +38,9 @@ export function ServiceUrgencies({
             {bullets.map((b) => (
               <li
                 key={b}
-                className="flex items-start gap-3 rounded-2xl border-2 border-cream-50/15 bg-cream-50/5 px-4 py-3 text-sm font-semibold text-cream-100/90"
+                className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.05] px-4 py-3 text-sm font-medium text-cobalt-50 backdrop-blur"
               >
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-mint-300" />
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-cyan-400" />
                 {b}
               </li>
             ))}
@@ -48,19 +48,17 @@ export function ServiceUrgencies({
         </div>
 
         <div className="relative lg:col-span-5">
-          {/* Sticker rotado */}
-          <div className="absolute -top-4 -right-3 z-20 rotate-sticker-2 rounded-full border-2 border-ink-900 bg-coral-500 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-white shadow-sticker">
-            ★ Prioridad alta
-          </div>
-
-          <div className="relative rounded-3xl border-2 border-ink-900 bg-cream-50 p-7 text-ink-900 shadow-sticker">
-            <div className="flex items-center gap-3">
-              <span className="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-ink-900 bg-coral-500 text-white">
+          <div className="relative rounded-3xl border border-ink-200 bg-white p-7 text-ink-900 shadow-elevate">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-copper-100 bg-copper-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-copper-700">
+              Prioridad alta
+            </span>
+            <div className="mt-5 flex items-center gap-3">
+              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cobalt-500 text-white shadow-glow-cobalt">
                 <Clock4 className="h-6 w-6" />
               </span>
-              <h3 className="font-display text-xl font-bold">¿Necesitas a alguien ya?</h3>
+              <h3 className="font-display text-xl font-semibold">¿Necesitas a alguien ya?</h3>
             </div>
-            <p className="mt-4 text-sm text-ink-700">
+            <p className="mt-4 text-sm text-ink-500">
               Si la urgencia no puede esperar, llámanos directamente. Te decimos al momento si podemos
               acudir y en qué plazo aproximado.
             </p>

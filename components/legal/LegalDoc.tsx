@@ -13,7 +13,7 @@ function linkify(text: string): ReactNode[] {
         href={part}
         target="_blank"
         rel="noopener noreferrer"
-        className="break-words font-semibold text-brand-700 underline underline-offset-2 hover:text-coral-600"
+        className="break-words font-semibold text-cobalt-700 underline underline-offset-2 hover:text-cobalt-800"
       >
         {part}
       </a>
@@ -34,7 +34,7 @@ function renderBody(body: string): ReactNode[] {
         <ul key={i} className="my-4 space-y-2">
           {lines.map((line, j) => (
             <li key={j} className="flex gap-2.5 text-ink-700">
-              <span className="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-coral-500" />
+              <span className="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-cobalt-500" />
               <span className="leading-relaxed">{linkify(line.replace(/^-\s+/, ""))}</span>
             </li>
           ))}
@@ -54,24 +54,25 @@ export function LegalDoc({ doc }: { doc: LegalDocContent }) {
   return (
     <>
       {/* Cabecera */}
-      <section className="border-b-2 border-ink-900 bg-cream-100">
+      <section className="relative isolate overflow-hidden border-b border-ink-200 bg-ink-50">
+        <div className="absolute inset-0 -z-10 bg-grid-light bg-grid opacity-50" aria-hidden />
         <Container className="py-12 sm:py-16">
-          <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.18em] text-ink-500">
+          <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-cobalt-600">
             <FileText className="h-3.5 w-3.5" />
             Información legal
           </span>
-          <h1 className="mt-3 font-display text-2xl font-bold text-ink-900 sm:text-3xl">
+          <h1 className="mt-3 font-display text-2xl font-semibold text-ink-900 sm:text-3xl">
             {doc.title}
           </h1>
-          <p className="mt-4 max-w-2xl text-pretty text-ink-700">{doc.intro}</p>
-          <p className="mt-5 text-xs font-bold uppercase tracking-wider text-ink-500">
+          <p className="mt-4 max-w-2xl text-pretty text-ink-600">{doc.intro}</p>
+          <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-ink-400">
             Última actualización: {doc.updated}
           </p>
         </Container>
       </section>
 
       {/* Cuerpo */}
-      <section className="bg-cream-50">
+      <section className="bg-white">
         <Container className="py-12 sm:py-16">
           <div className="mx-auto max-w-3xl">
             {doc.sections.map((section, i) => (
@@ -79,7 +80,7 @@ export function LegalDoc({ doc }: { doc: LegalDocContent }) {
                 key={i}
                 className="border-b border-ink-200 py-6 first:pt-0 last:border-b-0 last:pb-0"
               >
-                <h2 className="font-display text-lg font-bold text-ink-900 sm:text-xl">
+                <h2 className="font-display text-lg font-semibold text-ink-900 sm:text-xl">
                   {section.heading}
                 </h2>
                 <div className="mt-2 text-sm sm:text-[15px]">{renderBody(section.body)}</div>
