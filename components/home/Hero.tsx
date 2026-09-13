@@ -26,7 +26,9 @@ export function Hero() {
     <section className="relative isolate overflow-hidden bg-cobalt-950 text-white">
       {/* Fondo: foto velada + tech */}
       <Image src="/img/hero.jpg" alt="" fill priority sizes="100vw" className="-z-20 object-cover" aria-hidden />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cobalt-950/96 via-cobalt-950/90 to-cobalt-900/75" aria-hidden />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cobalt-950/97 via-cobalt-950/92 to-cobalt-950/82" aria-hidden />
+      {/* Velo vertical extra en móvil: la columna de texto ocupa todo el ancho y caía sobre la zona clara de la foto */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-cobalt-950 via-cobalt-950/75 to-cobalt-950/30 sm:hidden" aria-hidden />
       <div className="absolute inset-0 -z-10 bg-grid-tech bg-grid opacity-30" aria-hidden />
       <div className="absolute inset-0 -z-10 bg-cobalt-radial opacity-70" aria-hidden />
       <div className="absolute -right-40 -top-24 -z-10 h-[520px] w-[520px] rounded-full bg-cobalt-500/25 blur-3xl" aria-hidden />
@@ -63,7 +65,7 @@ export function Hero() {
               <span className="text-white/95">Bien hechas.</span>
             </h1>
 
-            <p className="mt-6 max-w-xl text-pretty text-lg text-cobalt-100/80">
+            <p className="mt-6 max-w-xl text-pretty text-lg text-cobalt-50/90">
               Equipo de oficio en Madrid y Barcelona. Electricidad, fontanería, climatización,
               carpintería y obra. Particulares, empresas y constructoras. Tú llamas, vamos y lo
               resolvemos.
