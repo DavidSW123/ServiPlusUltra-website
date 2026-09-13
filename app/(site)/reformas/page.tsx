@@ -48,7 +48,7 @@ const features: Feature[] = [
     icon: Building2,
     title: "Obra para constructoras y promotoras",
     description:
-      "Ejecutamos obra y subcontrata de gremios (electricidad, fontanería, climatización, albañilería) para constructoras y promotoras, con la seriedad que exige un B2B.",
+      "Ejecutamos obra y subcontrata de gremios (electricidad, fontanería, climatización, albañilería) para constructoras y promotoras, con la seriedad y los plazos que exige trabajar entre empresas.",
     bullets: ["Equipo propio y coordinación de oficios", "Certificados y boletines cuando aplica", "Facturación y plazos claros"],
   },
   {
