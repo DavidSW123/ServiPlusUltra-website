@@ -130,7 +130,7 @@ function renderEmailHtml(d: ContactInput) {
       )}</p>
     </div>
     <div style="padding:14px 24px;background:#0f172a;color:#94a3b8;font-size:11px">
-      Recibido vía formulario web · serviplusultra.es
+      Recibido vía formulario web · serviplusultrasolutionssl.com
     </div>
   </div>
 </body></html>`;
