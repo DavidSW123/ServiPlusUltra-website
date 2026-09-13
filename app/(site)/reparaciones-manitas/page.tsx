@@ -68,7 +68,7 @@ const features: Feature[] = [
 const manitasFaq = [
   {
     q: "¿Hacéis solo arreglos pequeños o también algo más grande?",
-    a: "Lo nuestro son los pequeños arreglos del día a día y los remates. Si vemos que algo necesita un especialista (por ejemplo una obra mayor), te lo decimos y te orientamos.",
+    a: "En 'manitas' lo nuestro son los pequeños arreglos del día a día y los remates. Para reformas y obras de mayor alcance tenemos un servicio específico de Reformas: también lo hacemos, con presupuesto y plazos por escrito. Si tu caso encaja mejor ahí, te lo decimos.",
   },
   {
     q: "¿Compráis vosotros el material o lo pongo yo?",
@@ -112,7 +112,7 @@ export default function ManitasPage() {
       <ServiceFeatures
         eyebrow="Qué hacemos"
         title={<>Lo que hace falta para que tu casa funcione bien</>}
-        subtitle="No vendemos reformas imposibles ni hacemos obras grandes. Hacemos lo que de verdad se acumula: pequeños arreglos, ajustes y remates."
+        subtitle="Aquí nos centramos en lo pequeño: lo que de verdad se acumula — arreglos, ajustes y remates del día a día. ¿Es una reforma u obra de mayor alcance? También la hacemos, desde nuestro servicio de Reformas."
         features={features}
       />
 

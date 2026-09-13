@@ -5,7 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url;
   const now = new Date();
 
-  const main = ["", "/electricidad", "/climatizacion", "/reparaciones-manitas", "/madrid", "/barcelona"];
+  const main = ["", "/electricidad", "/climatizacion", "/reparaciones-manitas", "/reformas", "/madrid", "/barcelona"];
   const legal = ["/aviso-legal", "/privacidad", "/cookies"];
 
   const entries: MetadataRoute.Sitemap = [

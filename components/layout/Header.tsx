@@ -14,6 +14,7 @@ const navItems = [
   { href: "/electricidad", label: "Electricidad" },
   { href: "/climatizacion", label: "Climatización" },
   { href: "/reparaciones-manitas", label: "Manitas" },
+  { href: "/reformas", label: "Reformas" },
   { href: "/madrid", label: "Madrid" },
   { href: "/barcelona", label: "Barcelona" },
   { href: "/contacto", label: "Contacto" },
